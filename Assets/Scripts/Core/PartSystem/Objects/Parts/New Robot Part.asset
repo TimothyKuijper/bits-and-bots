@@ -12,3 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a7b6293a98c7b640968619d2b231eb0, type: 3}
   m_Name: New Robot Part
   m_EditorClassIdentifier: 
+  Type: 0
+  Rarity: 0
+  Value: 0
+  BreakMod: 0
+  MaxPartHealth: 0
+  CurrentPartHealth: 0
