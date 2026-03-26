@@ -8,5 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/WiperTest.unity
+    guid: 3f4387da9fee74f43b392af03df5d8fe
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
