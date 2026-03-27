@@ -20,7 +20,7 @@ public class Part : ScriptableObject
     public float GetPartValue() => _isBroken ? Value * BreakModifier : Value;
 
 
-    [Tooltip("Max health of the part and how many damage it can take till broken")][SerializeField] private int MaxPartHealth;
+    [Tooltip("Max health of the part and how many damage it can take till broken")][SerializeField] public int MaxPartHealth;
     [Tooltip("Current health of a part")][SerializeField] private int CurrentPartHealth;
     public int PartHealth
     {
@@ -41,17 +41,14 @@ public class Part : ScriptableObject
     private bool _isBroken;
     public bool IsBroken => _isBroken;
 
-    [Tooltip("Index of the model")] public int ModelIndex;
 
-
-    public Part(PartType type = PartType.Head, int rarity = 0, float value = 0, float breakMod = 0.5f, int newPartHealth = 3, int modelIndex = 0)
+    public Part(PartType type = PartType.Head, int rarity = 0, float value = 0, float breakMod = 0.5f, int maxPartHealth = 3, int currentPartHealth = 3)
     {
         Type = type;
         Rarity = rarity;
         Value = value;
         BreakModifier = breakMod;
-        MaxPartHealth = newPartHealth;
-        CurrentPartHealth = MaxPartHealth;
-        ModelIndex = modelIndex;
+        MaxPartHealth = maxPartHealth;
+        PartHealth = currentPartHealth;
     }
 }
