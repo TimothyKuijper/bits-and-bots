@@ -25,3 +25,6 @@ MonoBehaviour:
   - name: Voronoi Circle Wipe
     shader: {fileID: -6465566751694194690, guid: 7114195d9bd60dd4cb22a462ba34a5ef,
       type: 3}
+  - name: CircleWipe
+    shader: {fileID: -6465566751694194690, guid: f4b509a9510923949a557312dc94a376,
+      type: 3}
