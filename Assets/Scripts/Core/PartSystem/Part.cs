@@ -13,6 +13,12 @@ public class Part : ScriptableObject
         MovementModule,
         Cpu
     }
+
+    [Header("Flavor")]
+    [Tooltip("Name of the part")] public string PartName = "Basic Part";
+    [Tooltip("Color of part")] public Color PartColor = Color.white;
+
+    [Header("Settings")]
     [Tooltip("The type of the part. Decides which slot this part is used in")] public PartType Type;
     [Tooltip("The rarity of the part, used to scale enemies to this part")] public int Rarity;
     [Tooltip("Value used for calculations with the part in moment-to-moment gameplay")] public float Value;
@@ -42,8 +48,12 @@ public class Part : ScriptableObject
     public bool IsBroken => _isBroken;
 
 
-    public Part(PartType type = PartType.Head, int rarity = 0, float value = 0, float breakMod = 0.5f, int maxPartHealth = 3, int currentPartHealth = 3)
+    public Part(string name = "Basic Part", string colorString = "ffffff", PartType type = PartType.Head, int rarity = 0, float value = 0, float breakMod = 0.5f, int maxPartHealth = 3, int currentPartHealth = 3)
     {
+        PartName = name;
+        ColorUtility.TryParseHtmlString(colorString, out var newColor);
+        PartColor = newColor;
+
         Type = type;
         Rarity = rarity;
         Value = value;

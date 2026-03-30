@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PartUtility
 {
-    private const float RarityDivider = 2f; 
-    private const float ValueScale = 0.01f; 
-    public static Part ScalePart(Part part, float scaling = 0)
+    private const float ScalingScale = 0.01f; 
+    public static Part ScalePart(Part part, float scaling = 1)
     {
-        var rarity = (int)Mathf.Floor(part.Rarity *  scaling / RarityDivider);
-        var value = part.Value * scaling * ValueScale;
-        return new Part(part.Type, rarity, value, part.BreakModifier, part.MaxPartHealth, part.PartHealth);
+        var rarityModifier = 1 + (scaling * ScalingScale);
+        var rarity = (int)Mathf.Floor(part.Rarity * rarityModifier);
+        var value = part.Value + (part.Value * scaling * ScalingScale);
+        return new Part(part.PartName, ColorUtility.ToHtmlStringRGB(part.PartColor), part.Type, rarity, value, part.BreakModifier, part.MaxPartHealth, part.PartHealth);
     }
 }
