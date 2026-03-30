@@ -11,28 +11,29 @@ Voor een complete en uitgebreide beschrijving over het functioneel ontwerp ga na
 Game loop:
 Game loop cycles through the garage (build mode) and stadium (fight mode), in the garage you can repair broken parts and roll for new parts which gives you a random type of part with random stats based on your level in-game (how many fights you won), in here you can also customise your parts (mind you these do not affect gameplay), in the stadium you will fight progessively stronger enemies, thus needing to use the garage to roll for better parts
 
-# Geproduceerde Game Onderdelen
+# Geproduceerde Game Onderdelen 
+(de links woorden later verandert naar julie werk inverplaats van jullie namen)
 
 Timothy:
-* 
+* [Timothy](https://github.com/TimothyKuijper/bits-and-bots/tree/hotfix/readme/src/Timothy)
 
 Ferron:
-* 
+* [Ferron](https://github.com/TimothyKuijper/bits-and-bots/tree/hotfix/readme/src/Ferron)
 
 Teffer:
-* 
+* [Teffer](https://github.com/TimothyKuijper/bits-and-bots/tree/hotfix/readme/src/Teffer)
 
 Noah:
-* 
+* [Noah](https://github.com/TimothyKuijper/bits-and-bots/tree/hotfix/readme/src/Noah)
 
 Cicerio:
-* 
+* [Cicerio](https://github.com/TimothyKuijper/bits-and-bots/tree/hotfix/readme/src/Cicerio)
 
 Delainy:
-* 
+* [Delainy](https://github.com/TimothyKuijper/bits-and-bots/tree/hotfix/readme/src/Delainy)
 
 Ahmet:
-* 
+* [Ahmet](https://github.com/TimothyKuijper/bits-and-bots/tree/hotfix/readme/src/Ahmet)
 
 Renzo:
-* 
+* [Renzo](https://github.com/TimothyKuijper/bits-and-bots/tree/hotfix/readme/src/Renzo)
