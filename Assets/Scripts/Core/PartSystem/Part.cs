@@ -20,14 +20,14 @@ public class Part : ScriptableObject
 
     [Header("Settings")]
     [Tooltip("The type of the part. Decides which slot this part is used in")] public PartType Type;
-    [Tooltip("The rarity of the part, used to scale enemies to this part")] public int Rarity;
-    [Tooltip("Value used for calculations with the part in moment-to-moment gameplay")] public float Value;
-    [Tooltip("The mod that gets used over the value when calculating part value")] public float BreakModifier;
+    [Tooltip("The rarity of the part, used to scale enemies to this part")][Range(1, 10)] public int Rarity;
+    [Tooltip("Value used for calculations with the part in moment-to-moment gameplay")][Range(1f, 100f)] public float Value;
+    [Tooltip("The mod that gets used over the value when calculating part value")][Range(0.01f, 2f)] public float BreakModifier;
     public float GetPartValue() => _isBroken ? Value * BreakModifier : Value;
 
 
-    [Tooltip("Max health of the part and how many damage it can take till broken")][SerializeField] public int MaxPartHealth;
-    [Tooltip("Current health of a part")][SerializeField] private int CurrentPartHealth;
+    [Tooltip("Max health of the part and how many damage it can take till broken")][SerializeField][Range(1, 10)] public int MaxPartHealth;
+    [Tooltip("Current health of a part")][SerializeField][Range(1, 10)] private int CurrentPartHealth;
     public int PartHealth
     {
         get => CurrentPartHealth;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Yakapedia;
 
 public class PartDisplayExample : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class PartDisplayExample : MonoBehaviour
     private void Start()
     {
         rerollButton.onClick.AddListener(Generate);
-        scalingSlider.onValueChanged.AddListener((value) => scalingLabel.text = "Scale: " + value.ToString());
+        scalingSlider.onValueChanged.AddListener((value) => scalingLabel.text = "Scale: " + value.RoundToNearest(0.01f).ToString());
     }
 
     private void Generate()
