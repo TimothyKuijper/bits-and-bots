@@ -50,8 +50,8 @@ public class Part : ScriptableObject
 
     public Part(string name = "Basic Part", string colorString = "ffffff", PartType type = PartType.Head, int rarity = 0, float value = 0, float breakMod = 0.5f, int maxPartHealth = 3, int currentPartHealth = 3)
     {
+        ColorUtility.TryParseHtmlString("#" + colorString, out var newColor);
         PartName = name;
-        ColorUtility.TryParseHtmlString(colorString, out var newColor);
         PartColor = newColor;
 
         Type = type;

@@ -10,6 +10,6 @@ public class PartUtility
         var rarityModifier = 1 + (scaling * ScalingScale);
         var rarity = (int)Mathf.Floor(part.Rarity * rarityModifier);
         var value = part.Value + (part.Value * scaling * ScalingScale);
-        return new Part(part.PartName, ColorUtility.ToHtmlStringRGB(part.PartColor), part.Type, rarity, value, part.BreakModifier, part.MaxPartHealth, part.PartHealth);
+        return new Part(part.PartName, ColorUtility.ToHtmlStringRGBA(part.PartColor), part.Type, rarity, value, part.BreakModifier, part.MaxPartHealth, part.PartHealth);
     }
 }
