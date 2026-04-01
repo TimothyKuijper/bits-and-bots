@@ -10,11 +10,11 @@ public class PartCollection : ScriptableObject
     [SerializeField] public List<Part> parts = new List<Part>();
 
     // Ordering each type in a different list
-    [SerializeField][HideInInspector] private List<Part> _headParts;
-    [SerializeField][HideInInspector] private List<Part> _weaponParts;
-    [SerializeField][HideInInspector] private List<Part> _bodyParts;
-    [SerializeField][HideInInspector] private List<Part> _movementParts;
-    [SerializeField][HideInInspector] private List<Part> _cpuParts;
+    [SerializeField][HideInInspector] private List<Part> headParts;
+    [SerializeField][HideInInspector] private List<Part> weaponParts;
+    [SerializeField][HideInInspector] private List<Part> bodyParts;
+    [SerializeField][HideInInspector] private List<Part> movementParts;
+    [SerializeField][HideInInspector] private List<Part> cpuParts;
 
     private void OnValidate()
     {
@@ -23,21 +23,21 @@ public class PartCollection : ScriptableObject
 
     private void ReorderTypes()
     {
-        _headParts = new List<Part>();
-        _weaponParts = new List<Part>();
-        _bodyParts = new List<Part>();
-        _movementParts = new List<Part>();
-        _cpuParts = new List<Part>();
+        headParts = new List<Part>();
+        weaponParts = new List<Part>();
+        bodyParts = new List<Part>();
+        movementParts = new List<Part>();
+        cpuParts = new List<Part>();
 
         foreach (Part part in parts)
         {
             switch (part.Type)
             {
-                case Part.PartType.Head: _headParts.Add(part); break; 
-                case Part.PartType.Weapon: _weaponParts.Add(part); break; 
-                case Part.PartType.Body: _bodyParts.Add(part); break; 
-                case Part.PartType.MovementModule: _movementParts.Add(part); break; 
-                case Part.PartType.Cpu: _cpuParts.Add(part); break; 
+                case Part.PartType.Head: headParts.Add(part); break; 
+                case Part.PartType.Weapon: weaponParts.Add(part); break; 
+                case Part.PartType.Body: bodyParts.Add(part); break; 
+                case Part.PartType.MovementModule: movementParts.Add(part); break; 
+                case Part.PartType.Cpu: cpuParts.Add(part); break; 
             }
         }
     }
@@ -46,11 +46,11 @@ public class PartCollection : ScriptableObject
     {
         switch (type)
         {
-            case Part.PartType.Head: return _headParts;
-            case Part.PartType.Weapon: return _weaponParts;
-            case Part.PartType.Body: return _bodyParts;
-            case Part.PartType.MovementModule: return _movementParts;
-            case Part.PartType.Cpu: return _cpuParts;
+            case Part.PartType.Head: return headParts;
+            case Part.PartType.Weapon: return weaponParts;
+            case Part.PartType.Body: return bodyParts;
+            case Part.PartType.MovementModule: return movementParts;
+            case Part.PartType.Cpu: return cpuParts;
         }
         return null;
     }
@@ -61,7 +61,7 @@ public class PartCollection : ScriptableObject
     {
         if (list == null) list = parts;
 
-        var part = parts[Mathf.Clamp(index, 0, parts.Count)];
+        var part = list[Mathf.Clamp(index, 0, list.Count)];
         return Instantiate(part);
     }
 

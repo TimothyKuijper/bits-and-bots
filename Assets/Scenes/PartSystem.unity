@@ -423,6 +423,7 @@ MonoBehaviour:
   rerollButton: {fileID: 1950580580}
   scalingSlider: {fileID: 813013097}
   scalingLabel: {fileID: 1608500635}
+  typeDropdown: {fileID: 1789642493}
   partLabel: {fileID: 1127945510}
   typeLabel: {fileID: 1330077151}
   rarityLabel: {fileID: 1780008665}
@@ -3444,6 +3445,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 1116795942}
   - {fileID: 925116931}
+  - {fileID: 475592623}
   - {fileID: 1474755158}
   - {fileID: 1082135790}
-  - {fileID: 475592623}

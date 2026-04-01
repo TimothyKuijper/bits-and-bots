@@ -11,6 +11,7 @@ public class PartDisplayExample : MonoBehaviour
     [SerializeField] private Button rerollButton;
     [SerializeField] private Slider scalingSlider;
     [SerializeField] private TextMeshProUGUI scalingLabel;
+    [SerializeField] private TMP_Dropdown typeDropdown;
 
     [Header("Generation Display")]
     [SerializeField] private TextMeshProUGUI partLabel;
@@ -34,7 +35,7 @@ public class PartDisplayExample : MonoBehaviour
 
     private void Generate()
     {
-        var part = partCollection.GetRandomPart();
+        var part = typeDropdown.value > 0 ? partCollection.GetRandomPartByType((Part.PartType)(typeDropdown.value - 1)) : partCollection.GetRandomPart();
         var scaledPart = PartUtility.ScalePart(part, scalingSlider.value);
         var intType = (int)scaledPart.Type;
 
