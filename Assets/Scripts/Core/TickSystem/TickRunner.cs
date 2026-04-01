@@ -10,6 +10,8 @@ public class TickRunner : MonoBehaviour
     [SerializeField] private float speedMultiplier = 1;
     [SerializeField] private float damageMultiplier = 1;
     
+    private TickPattern _tickPattern;
+    private Coroutine _runTickCoroutine;
 
     public void Run()
     {
