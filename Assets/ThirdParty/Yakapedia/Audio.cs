@@ -11,7 +11,7 @@ namespace Yakapedia
         /// <param name="volume">The volume value to set (0 to 1).</param>
         public static void SetGlobalVolume(float volume)
         {
-            var allSources = Object.FindObjectsOfType<AudioSource>();
+            var allSources = Object.FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
             foreach (AudioSource source in allSources)
             {
                 source.volume = Mathf.Clamp01(volume);
@@ -23,7 +23,7 @@ namespace Yakapedia
         /// </summary>
         public static void StopAllAudioSources()
         {
-            var allSources = Object.FindObjectsOfType<AudioSource>();
+            var allSources = Object.FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
             foreach (AudioSource source in allSources)
             {
                 source.Stop();

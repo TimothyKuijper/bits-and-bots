@@ -88,26 +88,26 @@ public class SerializableMatrix4x4Drawer : PropertyDrawer
     {
         position = EditorGUI.PrefixLabel(position, label);
 
-        float cellWidth = (position.width - Padding * 3) / 4;
+        var cellWidth = (position.width - Padding * 3) / 4;
 
-        SerializedProperty m00 = property.FindPropertyRelative("m00");
-        SerializedProperty m01 = property.FindPropertyRelative("m01");
-        SerializedProperty m02 = property.FindPropertyRelative("m02");
-        SerializedProperty m03 = property.FindPropertyRelative("m03");
-        SerializedProperty m10 = property.FindPropertyRelative("m10");
-        SerializedProperty m11 = property.FindPropertyRelative("m11");
-        SerializedProperty m12 = property.FindPropertyRelative("m12");
-        SerializedProperty m13 = property.FindPropertyRelative("m13");
-        SerializedProperty m20 = property.FindPropertyRelative("m20");
-        SerializedProperty m21 = property.FindPropertyRelative("m21");
-        SerializedProperty m22 = property.FindPropertyRelative("m22");
-        SerializedProperty m23 = property.FindPropertyRelative("m23");
-        SerializedProperty m30 = property.FindPropertyRelative("m30");
-        SerializedProperty m31 = property.FindPropertyRelative("m31");
-        SerializedProperty m32 = property.FindPropertyRelative("m32");
-        SerializedProperty m33 = property.FindPropertyRelative("m33");
+        var m00 = property.FindPropertyRelative("m00");
+        var m01 = property.FindPropertyRelative("m01");
+        var m02 = property.FindPropertyRelative("m02");
+        var m03 = property.FindPropertyRelative("m03");
+        var m10 = property.FindPropertyRelative("m10");
+        var m11 = property.FindPropertyRelative("m11");
+        var m12 = property.FindPropertyRelative("m12");
+        var m13 = property.FindPropertyRelative("m13");
+        var m20 = property.FindPropertyRelative("m20");
+        var m21 = property.FindPropertyRelative("m21");
+        var m22 = property.FindPropertyRelative("m22");
+        var m23 = property.FindPropertyRelative("m23");
+        var m30 = property.FindPropertyRelative("m30");
+        var m31 = property.FindPropertyRelative("m31");
+        var m32 = property.FindPropertyRelative("m32");
+        var m33 = property.FindPropertyRelative("m33");
 
-        Rect cellRect = new Rect(position.x, position.y, cellWidth, CellHeight);
+        var cellRect = new Rect(position.x, position.y, cellWidth, CellHeight);
         DrawRow(ref cellRect, cellWidth, m00, m01, m02, m03);
         cellRect.y += CellHeight + Padding;
         DrawRow(ref cellRect, cellWidth, m10, m11, m12, m13);

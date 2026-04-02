@@ -34,7 +34,7 @@ namespace Yakapedia
         /// <returns>The closest object of type T to the specified position, or null if none are found.</returns>
         public static T GetClosestObjectOfType<T>(this Transform position) where T : MonoBehaviour
         {
-            var objectsOfType = UnityEngine.Object.FindObjectsOfType<T>();
+            var objectsOfType = UnityEngine.Object.FindObjectsByType<T>(FindObjectsSortMode.None);
             if (objectsOfType.Length == 0) return null;
 
             var closest = objectsOfType[0];
@@ -198,7 +198,7 @@ namespace Yakapedia
                 position = touch.position
             };
 
-            var uiRaycasters = UnityEngine.Object.FindObjectsOfType<GraphicRaycaster>();
+            var uiRaycasters = UnityEngine.Object.FindObjectsByType<GraphicRaycaster>(FindObjectsSortMode.None);
             foreach (var raycaster in uiRaycasters)
             {
                 if (raycaster.gameObject.layer != LayerMask.NameToLayer(layerName)) continue;
@@ -225,7 +225,7 @@ namespace Yakapedia
             {
                 position = touch
             };
-            var uiRaycasters = UnityEngine.Object.FindObjectsOfType<GraphicRaycaster>();
+            var uiRaycasters = UnityEngine.Object.FindObjectsByType<GraphicRaycaster>(FindObjectsSortMode.None);
             foreach (var raycaster in uiRaycasters)
             {
                 if (raycaster.gameObject.layer != LayerMask.NameToLayer(layerName)) continue;
@@ -307,14 +307,7 @@ namespace Yakapedia
 
             return component;
         }
-
-#if UNITY_EDITOR
-        [MenuItem("Yakapedia/Clear Undo History")]
-        public static void ClearUndoHistory()
-        {
-            Undo.ClearAll();
-        }
-
+        
         /// <summary>
         /// Creates a generic singleton of a class (must inherit from this one)
         /// </summary>
@@ -329,7 +322,7 @@ namespace Yakapedia
                 {
                     if (_instance != null) return _instance;
 
-                    _instance = FindObjectOfType<T>();
+                    _instance = FindAnyObjectByType<T>();
                     if (_instance != null) return _instance;
 
                     var container = new GameObject(typeof(T).Name);
@@ -338,6 +331,13 @@ namespace Yakapedia
                     return _instance;
                 }
             }
+        }
+
+#if UNITY_EDITOR
+        [MenuItem("Yakapedia/Clear Undo History")]
+        public static void ClearUndoHistory()
+        {
+            Undo.ClearAll();
         }
 
         /// <summary> Renames the variable in the inspector </summary>
