@@ -22,7 +22,8 @@ public class PartDisplayExample : MonoBehaviour
     [SerializeField] private List<Sprite> partTextures = new List<Sprite>();
     [SerializeField] private TextMeshProUGUI valueLabel;
     [SerializeField] private TextMeshProUGUI modifierLabel;
-    //[SerializeField] private TextureBar partHealth;
+    [SerializeField] private TileBar partHealth;
+    [SerializeField] private TileBar partHealthBack;
 
     [Header("Dependencies")]
     [SerializeField] private PartCollection partCollection;
@@ -46,6 +47,7 @@ public class PartDisplayExample : MonoBehaviour
         partImage.color = scaledPart.PartColor;
         valueLabel.text = "Damage: " + scaledPart.GetPartValue().ToString();
         modifierLabel.text = "Modifier: " + scaledPart.BreakModifier.ToString();
-        //Health
+        partHealth.Value = scaledPart.PartHealth;
+        partHealthBack.Value = scaledPart.MaxPartHealth;
     }
 }
