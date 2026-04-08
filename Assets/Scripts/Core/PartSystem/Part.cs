@@ -16,7 +16,7 @@ public class Part : ScriptableObject
 
     [Header("Flavor")]
     [Tooltip("Name of the part")] public string PartName = "Basic Part";
-    [Tooltip("Color of part")] public Color PartColor = Color.white;
+    [Tooltip("Color of part, in HEX")] public string PartColor = "ffffff";
 
     [Header("Settings")]
     [Tooltip("The type of the part. Decides which slot this part is used in")] public PartType Type;
@@ -50,9 +50,8 @@ public class Part : ScriptableObject
 
     public Part(string name = "Basic Part", string colorString = "ffffff", PartType type = PartType.Head, int rarity = 0, float value = 0, float breakMod = 0.5f, int maxPartHealth = 3, int currentPartHealth = 3)
     {
-        ColorUtility.TryParseHtmlString("#" + colorString, out var newColor);
         PartName = name;
-        PartColor = newColor;
+        PartColor = colorString;
 
         Type = type;
         Rarity = rarity;

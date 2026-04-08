@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BasicHead
   m_EditorClassIdentifier: 
   PartName: Basic Head
-  PartColor: {r: 0, g: 1, b: 0.8610003, a: 1}
+  PartColor: ffffff
   Type: 0
   Rarity: 1
   Value: 1

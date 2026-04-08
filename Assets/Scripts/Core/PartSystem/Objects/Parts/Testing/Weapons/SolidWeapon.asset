@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SolidWeapon
   m_EditorClassIdentifier: 
   PartName: Solid Weapon
-  PartColor: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
+  PartColor: 5e718e
   Type: 1
   Rarity: 2
   Value: 1.8

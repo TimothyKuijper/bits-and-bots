@@ -11,6 +11,6 @@ public class PartUtility
         var modifiedRarity = Mathf.Clamp(part.Rarity + (part.Rarity * scaling * ScalingScale) - part.Rarity, part.Rarity, Mathf.Infinity);
         var rarity = (int)Mathf.Floor(modifiedRarity);
         var value = (part.Value + (part.Value * scaling * ScalingScale)).RoundToNearest(0.1f);
-        return new Part(part.PartName, ColorUtility.ToHtmlStringRGBA(part.PartColor), part.Type, rarity, value, part.BreakModifier, part.MaxPartHealth, part.PartHealth);
+        return new Part(part.PartName, part.PartColor, part.Type, rarity, value, part.BreakModifier, part.MaxPartHealth, part.PartHealth);
     }
 }

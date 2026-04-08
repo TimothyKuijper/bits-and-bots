@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SolidBody
   m_EditorClassIdentifier: 
   PartName: Solid Body
-  PartColor: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
+  PartColor: 5e718e
   Type: 2
   Rarity: 2
   Value: 1.8

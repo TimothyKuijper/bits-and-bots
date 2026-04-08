@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BasicBody
   m_EditorClassIdentifier: 
   PartName: Basic Body
-  PartColor: {r: 0, g: 1, b: 0.8610003, a: 1}
+  PartColor: ffffff
   Type: 2
   Rarity: 1
   Value: 1

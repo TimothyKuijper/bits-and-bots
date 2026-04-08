@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SolidMove
   m_EditorClassIdentifier: 
   PartName: Solid M. Module
-  PartColor: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
+  PartColor: 5e718e
   Type: 3
   Rarity: 2
   Value: 1.8

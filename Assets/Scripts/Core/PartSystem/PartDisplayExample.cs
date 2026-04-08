@@ -8,6 +8,8 @@ using Yakapedia;
 public class PartDisplayExample : MonoBehaviour
 {
     [Header("Generation")]
+    [SerializeField] private Button saveButton;
+    [SerializeField] private Button loadButton;
     [SerializeField] private Button rerollButton;
     [SerializeField] private Slider scalingSlider;
     [SerializeField] private TextMeshProUGUI scalingLabel;
@@ -28,8 +30,14 @@ public class PartDisplayExample : MonoBehaviour
     [Header("Dependencies")]
     [SerializeField] private PartCollection partCollection;
 
+    private Part _lastPart;
+    private const string PartKey = "SavedPart";
+
+
     private void Start()
     {
+        saveButton.onClick.AddListener(() => PersistentData.Set(PartKey, _lastPart));
+        loadButton.onClick.AddListener(() => DisplayPart(PersistentData.Get(PartKey, partCollection.parts[0])));
         rerollButton.onClick.AddListener(Generate);
         scalingSlider.onValueChanged.AddListener((value) => scalingLabel.text = "Scale: " + value.RoundToNearest(0.01f).ToString());
     }
@@ -38,16 +46,24 @@ public class PartDisplayExample : MonoBehaviour
     {
         var part = typeDropdown.value > 0 ? partCollection.GetRandomPartByType((Part.PartType)(typeDropdown.value - 1)) : partCollection.GetRandomPart();
         var scaledPart = PartUtility.ScalePart(part, scalingSlider.value);
-        var intType = (int)scaledPart.Type;
+        DisplayPart(scaledPart);
+    }
 
-        partLabel.text = scaledPart.PartName;
+    private void DisplayPart(Part part)
+    {
+        var intType = (int)part.Type;
+        ColorUtility.TryParseHtmlString("#" + part.PartColor, out var newColor);
+
+        partLabel.text = part.PartName;
         typeLabel.text = typeStrings[intType];
-        rarityLabel.text = "Tier: " + scaledPart.Rarity.ToString();
+        rarityLabel.text = "Tier: " + part.Rarity.ToString();
         partImage.sprite = partTextures[intType];
-        partImage.color = scaledPart.PartColor;
-        valueLabel.text = "Damage: " + scaledPart.GetPartValue().ToString();
-        modifierLabel.text = "Modifier: " + scaledPart.BreakModifier.ToString();
-        partHealth.Value = scaledPart.PartHealth;
-        partHealthBack.Value = scaledPart.MaxPartHealth;
+        partImage.color = newColor;
+        valueLabel.text = "Damage: " + part.GetPartValue().ToString();
+        modifierLabel.text = "Modifier: " + part.BreakModifier.ToString();
+        partHealth.Value = part.PartHealth;
+        partHealthBack.Value = part.MaxPartHealth;
+
+        _lastPart = part;
     }
 }
