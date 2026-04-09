@@ -5,12 +5,13 @@ using UnityEditor.TerrainTools;
 using UnityEngine;
 using UnityEngine.Events;
 using Yakapedia;
+using Random = UnityEngine.Random;
 
 public struct Icon
 {
     public GridData.IconTypes type;
     public Vector2 pos;
-    public GameObject gameObject;
+    public GameObject GO;
 }
 
 public class IconSwitcher : MonoBehaviour
@@ -24,7 +25,7 @@ public class IconSwitcher : MonoBehaviour
     private Icon selectedIcon;
     private Icon neighbouringIcon;
     
-    public UnityEvent<int> onMatchMade = new();
+    public static UnityEvent<int> onMatchMade = new();
     
     private enum Directions
     {
@@ -88,27 +89,27 @@ public class IconSwitcher : MonoBehaviour
         switch (direction)
         {
             case Directions.Right:
+                if (!CheckBounds()) return;
                 neighbouringIcon.type = gridData.grid[gridx + 1, gridy].type;
                 neighbouringIcon.pos = new Vector2(gridx + 1, gridy);
-                if (!CheckBounds()) return;
                 break;
             
             case Directions.Left:
+                if (!CheckBounds()) return;
                 neighbouringIcon.type = gridData.grid[gridx - 1, gridy].type;
                 neighbouringIcon.pos = new Vector2(gridx - 1, gridy);
-                if (!CheckBounds()) return;
                 break;
             
             case Directions.Up:
+                if (!CheckBounds()) return;
                 neighbouringIcon.type = gridData.grid[gridx, gridy + 1].type;
                 neighbouringIcon.pos = new Vector2(gridx, gridy + 1);
-                if (!CheckBounds()) return;
                 break;
             
             case Directions.Down:
+                if (!CheckBounds()) return;
                 neighbouringIcon.type = gridData.grid[gridx, gridy - 1].type;
                 neighbouringIcon.pos = new Vector2(gridx, gridy - 1);
-                if (!CheckBounds()) return;
                 break;
         }
 
@@ -121,8 +122,8 @@ public class IconSwitcher : MonoBehaviour
         gridData.grid[gridx, gridy] = neighbourIcon;
         gridData.grid[(int)neighbouringIcon.pos.x, (int)neighbouringIcon.pos.y] = initialIcon;
 
-        var inititalIconPosition = initialIcon.gameObject.transform.position;
-        var neighbourIconPosition = neighbourIcon.gameObject.transform.position;
+        var inititalIconPosition = initialIcon.GO.transform.position;
+        var neighbourIconPosition = neighbourIcon.GO.transform.position;
 
         // initialIcon.gameObject.transform.position = neighbourIconPosition;
         // neighbourIcon.gameObject.transform.position = inititalIconPosition;
@@ -131,16 +132,16 @@ public class IconSwitcher : MonoBehaviour
 
         if (validMatch)
         {
-            initialIcon.gameObject.transform.position = neighbourIconPosition;
-            neighbourIcon.gameObject.transform.position = inititalIconPosition;
+            initialIcon.GO.transform.position = neighbourIconPosition;
+            neighbourIcon.GO.transform.position = inititalIconPosition;
         }
     }
 
     private bool CheckBounds()
     {
         return neighbouringIcon.pos.x >= 0 && neighbouringIcon.pos.y >= 0 &&
-               neighbouringIcon.pos.x < gridData.grid.GetLength(1) &&
-               neighbouringIcon.pos.y < gridData.grid.GetLength(0);
+               neighbouringIcon.pos.x < gridData.grid.GetLength(0) &&
+               neighbouringIcon.pos.y < gridData.grid.GetLength(1);
     }
 
     private bool CheckForMatch(int x, int y)
@@ -176,10 +177,11 @@ public class IconSwitcher : MonoBehaviour
         
         foreach (var icon in match)
         {
-            onMatchMade.Invoke(match.Count);
             gridData.grid[(int)icon.pos.x, (int)icon.pos.y] = new Icon();
-            Destroy(icon.gameObject);
+            Destroy(icon.GO);
         }
+        
+        onMatchMade.Invoke(match.Count);
         
         return true;
     }

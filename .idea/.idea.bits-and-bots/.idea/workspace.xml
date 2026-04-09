@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6856b51-23cf-41ed-9259-07a09a041c91" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/RefillGrid.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/RefillGrid.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.bits-and-bots/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.bits-and-bots/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/URP/URP-Balanced-Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/URP/URP-Balanced-Renderer.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Grid.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Grid.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/GridData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/GridData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/IconSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/IconSwitcher.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +26,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5c71fc4f67b645d8a9b95e5904c5d1b1468c00/8b/3a801c91/Queue`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Grid/IconSwitcher.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Grid/RefillGrid.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -90,15 +93,13 @@
       <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="59490">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="59490" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list>
-          <MonoRuntime />
-        </list>
+        <list />
       </option>
       <option name="selectedOptions">
         <list />
@@ -122,7 +123,9 @@
       <workItem from="1774611666347" duration="10344000" />
       <workItem from="1774859630491" duration="13731000" />
       <workItem from="1775044777078" duration="3977000" />
-      <workItem from="1775206384018" duration="9519000" />
+      <workItem from="1775206384018" duration="12756000" />
+      <workItem from="1775636651776" duration="5964000" />
+      <workItem from="1775734513864" duration="3072000" />
     </task>
     <servers />
   </component>
@@ -154,32 +157,6 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Grid/IconSwitcher.cs</url>
-          <line>146</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Grid/IconSwitcher.cs" containingFunctionPresentation="Method 'CheckForMatch'">
-            <startOffsets>
-              <option value="4445" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4446" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Grid/IconSwitcher.cs</url>
-          <line>164</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Grid/IconSwitcher.cs" containingFunctionPresentation="Method 'CheckForMatch'">
-            <startOffsets>
-              <option value="5035" />
-            </startOffsets>
-            <endOffsets>
-              <option value="5036" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

@@ -51,8 +51,7 @@ public class GridData : MonoBehaviour
                 for (int x = 0; x < width; x++)
                 {
                     var randomType = (IconTypes)Random.Range(0, 5);
-                    var Icon = new Icon();
-                    grid[x, y] = Icon;
+                    grid[x, y] = new Icon();
                     grid[x, y].type = randomType;
                     grid[x, y].pos = new Vector2(x, y);
                 }
@@ -71,7 +70,7 @@ public class GridData : MonoBehaviour
 
                 var pos = new Vector2(worldX, worldY);
                 var icon = Instantiate(iconPrefab, pos, Quaternion.identity);
-                grid[x, y].gameObject = icon;
+                grid[x, y].GO = icon;
 
                 var index = (int)grid[x,y].type;
                 icon.GetComponent<SpriteRenderer>().sprite = icons[index];
