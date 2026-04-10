@@ -56,5 +56,5 @@ public class Robot : ScriptableObject
 
 
     public int GetTotalRarity() => _head.Rarity + _weapon.Rarity + _body.Rarity + _movementModule.Rarity + _cpu.Rarity;
-    public float GetTotalValue() => _head.Value + _weapon.Value + _body.Value + _movementModule.Value + _cpu.Value;
+    public float GetTotalValue() => _head.GetPartValue() + _weapon.GetPartValue() + _body.GetPartValue() + _movementModule.GetPartValue() + _cpu.GetPartValue();
 }
