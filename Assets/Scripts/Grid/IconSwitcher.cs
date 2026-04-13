@@ -1,11 +1,7 @@
 using System;
 using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
-using UnityEditor.TerrainTools;
 using UnityEngine;
 using UnityEngine.Events;
-using Yakapedia;
-using Random = UnityEngine.Random;
 
 public class IconSwitcher : MonoBehaviour
 {
@@ -117,9 +113,6 @@ public class IconSwitcher : MonoBehaviour
 
         var inititalIconPosition = initialIcon.GO.transform.position;
         var neighbourIconPosition = neighbourIcon.GO.transform.position;
-
-        // initialIcon.gameObject.transform.position = neighbourIconPosition;
-        // neighbourIcon.gameObject.transform.position = inititalIconPosition;
         
         var validMatch = CheckForMatch((int)neighbouringIcon.pos.x, (int)neighbouringIcon.pos.y, out var amount);
 

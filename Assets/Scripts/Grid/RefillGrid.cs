@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,11 +7,6 @@ public class RefillGrid : MonoBehaviour
     void Start()
     {
         IconSwitcher.onMatchMade.AddListener(_ => CheckGridForEmptySpots());
-    }
-
-    void Update()
-    {
-        
     }
 
     private void CheckGridForEmptySpots()
