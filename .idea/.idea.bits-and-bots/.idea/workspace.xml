@@ -5,10 +5,106 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6856b51-23cf-41ed-9259-07a09a041c91" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.bits-and-bots/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.bits-and-bots/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/GridData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/GridData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/IconSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/IconSwitcher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/RefillGrid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/RefillGrid.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DefaultVolumeProfile.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DefaultVolumeProfile.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/BattleBar.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/BattleBar.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/PartSystem.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/PartSystem.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/TickSystem.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/TickSystem.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/BattleBar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/BattleBar/BattleBar.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/BattleBar/BattleBar.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/BattleBar/BattleBarExample.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/BattleBar/BattleBarExample.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Collections.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Collections/TestCollection.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Collections/TestCollection.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Bodies.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Bodies/BasicBody.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Bodies/BasicBody.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Bodies/CoolBody.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Bodies/CoolBody.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Bodies/SolidBody.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Bodies/SolidBody.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Cpus.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Cpus/BasicCpu.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Cpus/BasicCpu.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Cpus/CoolCpu.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Cpus/CoolCpu.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Cpus/SolidCpu.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Cpus/SolidCpu.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Heads.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Heads/BasicHead.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Heads/BasicHead.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Heads/CoolHead.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Heads/CoolHead.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Heads/SolidHead.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Heads/SolidHead.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Movement.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Movement/BasicMove.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Movement/BasicMove.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Movement/CoolMove.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Movement/CoolMove.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Movement/SolidMove.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Movement/SolidMove.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Weapons.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Weapons/BasicWeapon.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Weapons/BasicWeapon.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Weapons/CoolWeapon.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Weapons/CoolWeapon.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Weapons/SolidWeapon.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Objects/Parts/Testing/Weapons/SolidWeapon.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Part.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Part.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/PartCollection.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/PartCollection.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/PartDisplayExample.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/PartDisplayExample.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/PartUtility.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/PartUtility.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Robot.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/Robot.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/RobotBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PartSystem/RobotBuilder.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/TickSystem.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/TickSystem/New Tick Pattern.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/TickSystem/New Tick Pattern.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/TickSystem/Tick.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/TickSystem/Tick.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/TickSystem/TickExample.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/TickSystem/TickExample.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/TickSystem/TickPattern.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/TickSystem/TickPattern.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/TickSystem/TickRunner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/TickSystem/TickRunner.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Framework.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Framework/Enemy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Framework/Enemy.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Textures/TileBar_tex.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Textures/TileBar_tex.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TileBar.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TileBar.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utility.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utility/Transitioning.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utility/Transitioning/TransitionPlayer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utility/Transitioning/TransitionPlayer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/Wiper/BrushWipe.shadergraph" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/Wiper/BrushWipe.shadergraph.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/Wiper/Materials/WiperMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThirdParty/Wiper/Materials/WiperMaterial.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/Wiper/ScriptableObjects/DefaultTransitionCollection.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThirdParty/Wiper/ScriptableObjects/DefaultTransitionCollection.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/Yautl/Scripts/TweenExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThirdParty/Yautl/Scripts/TweenExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/URP-Balanced-Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/URP/URP-Balanced-Renderer.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +119,13 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5c71fc4f67b645d8a9b95e5904c5d1b1468c00/8b/3a801c91/Queue`1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/t1msaa/Projects/BitsAndBots/bits-and-bots/Assets/Scripts.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/t1msaa/Projects/BitsAndBots/bits-and-bots/Assets/Scripts.meta" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Grid/IconSwitcher.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Grid/RefillGrid.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/t1msaa/Projects/BitsAndBots/bits-and-bots/Packages/manifest.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/t1msaa/Projects/BitsAndBots/bits-and-bots/Packages/manifest.json" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -35,23 +136,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/grid&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "Merging feature/grid",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$USER_HOME$/Unity/Hub/Editor/2023.2.22f1/Editor/Unity" />
@@ -91,15 +192,13 @@
       <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="4447">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="4447" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list>
-          <MonoRuntime />
-        </list>
+        <list />
       </option>
       <option name="selectedOptions">
         <list />
