@@ -7,13 +7,6 @@ using UnityEngine.Events;
 using Yakapedia;
 using Random = UnityEngine.Random;
 
-public struct Icon
-{
-    public GridData.IconTypes type;
-    public Vector2 pos;
-    public GameObject GO;
-}
-
 public class IconSwitcher : MonoBehaviour
 {
     [SerializeField] private GridData gridData;
@@ -128,12 +121,13 @@ public class IconSwitcher : MonoBehaviour
         // initialIcon.gameObject.transform.position = neighbourIconPosition;
         // neighbourIcon.gameObject.transform.position = inititalIconPosition;
         
-        var validMatch = CheckForMatch((int)neighbouringIcon.pos.x, (int)neighbouringIcon.pos.y);
+        var validMatch = CheckForMatch((int)neighbouringIcon.pos.x, (int)neighbouringIcon.pos.y, out var amount);
 
         if (validMatch)
         {
             initialIcon.GO.transform.position = neighbourIconPosition;
             neighbourIcon.GO.transform.position = inititalIconPosition;
+            onMatchMade.Invoke(amount);
         }
     }
 
@@ -144,7 +138,7 @@ public class IconSwitcher : MonoBehaviour
                neighbouringIcon.pos.y < gridData.grid.GetLength(1);
     }
 
-    private bool CheckForMatch(int x, int y)
+    private bool CheckForMatch(int x, int y, out int matchAmount)
     {
         var targetType = gridData.grid[x, y].type;
         var match = new List<Icon>();
@@ -173,6 +167,7 @@ public class IconSwitcher : MonoBehaviour
             }
         }
 
+        matchAmount = 0;
         if (match.Count < 3) return false;
         
         foreach (var icon in match)
@@ -180,9 +175,8 @@ public class IconSwitcher : MonoBehaviour
             gridData.grid[(int)icon.pos.x, (int)icon.pos.y] = new Icon();
             Destroy(icon.GO);
         }
-        
-        onMatchMade.Invoke(match.Count);
-        
+
+        matchAmount = match.Count;
         return true;
     }
 

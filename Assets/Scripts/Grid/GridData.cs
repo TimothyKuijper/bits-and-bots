@@ -1,5 +1,13 @@
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
+
+public struct Icon
+{
+    public GridData.IconTypes type;
+    public Vector2 pos;
+    public GameObject GO;
+}
 
 public class GridData : MonoBehaviour
 {
@@ -7,6 +15,9 @@ public class GridData : MonoBehaviour
     public int width;
 
     public float tileSize;
+
+    private float offsetx;
+    private float offsety;
 
     [SerializeField] private Sprite[] icons;
 
@@ -16,6 +27,7 @@ public class GridData : MonoBehaviour
     
     public enum IconTypes
     {
+        _,
         square,
         circle,
         triangle,
@@ -27,19 +39,13 @@ public class GridData : MonoBehaviour
 
     void Start()
     {
+        offsetx = (width - 1) / 2f;
+        offsety = height - 1;
         BuildGrid();
     }
 
     public void BuildGrid()
     {
-        if (gridObjects.Count != 0)
-        {
-            foreach (var objects in gridObjects)
-            {
-                Destroy(objects);
-            }
-        }
-
         gridObjects = new();
         
         if (grid == null)
@@ -50,7 +56,7 @@ public class GridData : MonoBehaviour
             {
                 for (int x = 0; x < width; x++)
                 {
-                    var randomType = (IconTypes)Random.Range(0, 5);
+                    var randomType = (IconTypes)Random.Range(1, 6);
                     grid[x, y] = new Icon();
                     grid[x, y].type = randomType;
                     grid[x, y].pos = new Vector2(x, y);
@@ -62,18 +68,22 @@ public class GridData : MonoBehaviour
         {
             for (int x = 0; x < width; x++)
             {
-                var offsetx = (width - 1) / 2f;
-                var offsety = (height - 1);
-
                 var worldX = (x - offsetx) * tileSize;
                 var worldY = (y - offsety) * tileSize;
+                
+                if (grid[x, y].GO != null) continue;
+                
+                var randomType = (IconTypes)Random.Range(1, 6);
+                grid[x, y] = new Icon();
+                grid[x, y].type = randomType;
+                grid[x, y].pos = new Vector2(x, y);
 
                 var pos = new Vector2(worldX, worldY);
                 var icon = Instantiate(iconPrefab, pos, Quaternion.identity);
                 grid[x, y].GO = icon;
 
                 var index = (int)grid[x,y].type;
-                icon.GetComponent<SpriteRenderer>().sprite = icons[index];
+                icon.GetComponent<SpriteRenderer>().sprite = icons[index -1];
                 gridObjects.Add(icon);
             }
         }

@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6856b51-23cf-41ed-9259-07a09a041c91" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/RefillGrid.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/RefillGrid.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.bits-and-bots/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.bits-and-bots/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Grid.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Grid.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/GridData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/GridData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/IconSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/IconSwitcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/RefillGrid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/RefillGrid.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,13 +91,15 @@
       <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="4447">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="4447" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list />
+        <list>
+          <MonoRuntime />
+        </list>
       </option>
       <option name="selectedOptions">
         <list />
@@ -125,7 +125,8 @@
       <workItem from="1775044777078" duration="3977000" />
       <workItem from="1775206384018" duration="12756000" />
       <workItem from="1775636651776" duration="5964000" />
-      <workItem from="1775734513864" duration="3072000" />
+      <workItem from="1775734513864" duration="4448000" />
+      <workItem from="1776067894879" duration="3546000" />
     </task>
     <servers />
   </component>
@@ -157,6 +158,19 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Grid/GridData.cs</url>
+          <line>80</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Grid/GridData.cs" containingFunctionPresentation="Method 'BuildGrid'">
+            <startOffsets>
+              <option value="1858" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1896" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

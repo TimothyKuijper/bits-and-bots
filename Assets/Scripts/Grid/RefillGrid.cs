@@ -26,6 +26,7 @@ public class RefillGrid : MonoBehaviour
                 var toCheck = gridData.grid[x, y];
                 if (toCheck.GO == null) continue;
                 populated.Enqueue(toCheck);
+                gridData.grid[x, y] = new Icon();
             }
 
 
@@ -39,11 +40,13 @@ public class RefillGrid : MonoBehaviour
                 var worldX = (x - offsetx) * gridData.tileSize;
                 var worldY = (itteration - offsety) * gridData.tileSize;
                 
-                icon.pos = new Vector2(worldX, worldY);
+                icon.pos = new Vector2(x, itteration);
                 gridData.grid[x, itteration] = icon;
-                icon.GO.transform.position = icon.pos;
+                icon.GO.transform.position = new Vector2(worldX, worldY);
                 itteration++;
             }
         }
+        
+        gridData.BuildGrid();
     }
 }
