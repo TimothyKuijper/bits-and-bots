@@ -7,7 +7,10 @@ using UnityEngine.UI;
 public class PartDisplay : BaseMenu
 {
     [SerializeField] private RobotBuilder robotBuilder;
+
     [SerializeField] private TextMeshProUGUI partLabel;
+    [SerializeField] private TextMeshProUGUI rarityLabel;
+
     [SerializeField] private Button backButton;
 
     private void Start()
@@ -30,6 +33,7 @@ public class PartDisplay : BaseMenu
             case Part.PartType.MovementModule: part = robot.MovementModule; break;
         }
 
-        //partLabel.text = part.PartName;
+        partLabel.text = part.PartName;
+        rarityLabel.text = "Rarity " + part.Rarity;
     }
 }

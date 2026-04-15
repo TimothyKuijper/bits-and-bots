@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a7b6293a98c7b640968619d2b231eb0, type: 3}
   m_Name: DCpu
   m_EditorClassIdentifier: 
-  PartName: 
-  PartColor: 
-  Type: 0
+  PartName: Pentium
+  PartColor: ffffff
+  Type: 4
   Rarity: 1
   Value: 1
   BreakModifier: 0.01
