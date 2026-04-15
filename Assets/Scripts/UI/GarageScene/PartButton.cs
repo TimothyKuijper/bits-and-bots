@@ -11,6 +11,5 @@ public class PartButton : WorldButton
     {
         // ADD PHYSICS FORCE LATER
         onPressed.AddListener(() => partMenu.OpenPart(partType));
-        onPressed.AddListener(() => print("b"));
     }
 }

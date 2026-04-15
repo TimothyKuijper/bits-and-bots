@@ -15,9 +15,9 @@ public class BaseMenu : MonoBehaviour
     [SerializeField] private List<Graphic> ignoredGraphics;
 
     [Header("Base Events")]
-    [SerializeField] private UnityEvent<bool> fadeComplete = new();
-    [SerializeField] private UnityEvent onShow = new();
-    [SerializeField] private UnityEvent onHide = new();
+    [SerializeField] public UnityEvent<bool> fadeComplete = new();
+    [SerializeField] public UnityEvent onShow = new();
+    [SerializeField] public UnityEvent onHide = new();
 
     private Graphic[] _graphics;
 
@@ -45,15 +45,17 @@ public class BaseMenu : MonoBehaviour
         StartCoroutine(FadeMenu(true));
     }
 
-    private void SetMenuColor(bool faded)
-    {
-        foreach (var graphic in _graphics) if (ignoredGraphics.Contains(graphic) == false) graphic.color = ColorTTools.GetFadeColor(graphic, faded);
-    }
-
     private IEnumerator FadeMenu(bool fadeOut)
     {
-        SetMenuColor(!fadeOut);
-        foreach (var graphic in _graphics) if (ignoredGraphics.Contains(graphic) == false) graphic.ColorTo(ColorTTools.GetFadeColor(graphic, fadeOut), fadeTime, fadeEase);
+        foreach (var graphic in _graphics)
+        {
+            if (ignoredGraphics.Contains(graphic) == true) continue;
+
+            var fade = ColorTTools.GetFadeColor(graphic, fadeOut);
+            if (graphic.color == fade) graphic.color = ColorTTools.GetFadeColor(graphic, !fadeOut);
+
+            graphic.ColorTo(fade, fadeTime, fadeEase);
+        }
 
         yield return new WaitForSeconds(fadeTime);
         fadeComplete.Invoke(fadeOut);

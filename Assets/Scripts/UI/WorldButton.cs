@@ -7,9 +7,5 @@ public class WorldButton : MonoBehaviour, IPointerDownHandler
 {
     public UnityEvent onPressed;
 
-    private void Start()
-    {
-        onPressed.AddListener(() => print("a"));
-    }
     public void OnPointerDown(PointerEventData eventData) => onPressed.Invoke();
 }
