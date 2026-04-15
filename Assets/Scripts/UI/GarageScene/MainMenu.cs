@@ -5,5 +5,6 @@ using UnityEngine.UI;
 
 public class MainMenu : BaseMenu
 {
+    [Header("Start Menu")]
     [SerializeField] private Button launchButton;
 }

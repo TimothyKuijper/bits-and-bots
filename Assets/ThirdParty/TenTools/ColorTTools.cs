@@ -18,15 +18,9 @@ public class ColorTTools
         return newColor;
     }
 
-    public static Color GetFadeColor(Image image, bool faded)
+    public static Color GetFadeColor(Graphic graphic, bool faded)
     {
-        var color = image.color;
-        return new Color(color.r, color.g, color.b, faded ? 0 : 1);
-    }
-
-    public static Color GetFadeColor(TextMeshProUGUI text, bool faded)
-    {
-        var color = text.color;
+        var color = graphic.color;
         return new Color(color.r, color.g, color.b, faded ? 0 : 1);
     }
 }
