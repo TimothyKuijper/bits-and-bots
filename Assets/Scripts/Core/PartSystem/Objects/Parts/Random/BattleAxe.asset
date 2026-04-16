@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a7b6293a98c7b640968619d2b231eb0, type: 3}
   m_Name: BattleAxe
   m_EditorClassIdentifier: 
-  PartName: 
-  PartColor: 
-  Type: 0
-  Rarity: 0
-  Value: 0
-  BreakModifier: 0
-  MaxPartHealth: 0
-  CurrentPartHealth: 0
+  PartName: Battle Axe
+  PartColor: f11f1f
+  Type: 1
+  Rarity: 3
+  Value: 4
+  BreakModifier: 0.8
+  MaxPartHealth: 5
+  CurrentPartHealth: 3

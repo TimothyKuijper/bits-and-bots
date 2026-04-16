@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PartName: Inverse Gauntlets
   PartColor: 
-  Type: 0
-  Rarity: 1
+  Type: 1
+  Rarity: 2
   Value: 1
-  BreakModifier: 0.01
-  MaxPartHealth: 1
-  CurrentPartHealth: 1
+  BreakModifier: 1.5
+  MaxPartHealth: 5
+  CurrentPartHealth: 5

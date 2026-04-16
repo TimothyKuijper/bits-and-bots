@@ -17,6 +17,6 @@ MonoBehaviour:
   Type: 2
   Rarity: 1
   Value: 1
-  BreakModifier: 0.01
-  MaxPartHealth: 1
-  CurrentPartHealth: 1
+  BreakModifier: 0.25
+  MaxPartHealth: 6
+  CurrentPartHealth: 6

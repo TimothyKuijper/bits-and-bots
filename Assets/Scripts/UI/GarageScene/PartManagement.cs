@@ -21,6 +21,7 @@ public class PartManagement : BaseMenu
     [SerializeField] private TileBar tileBar;
     [SerializeField] private TileBar tileBarCompare;
     [SerializeField] private TileBar tileBarBack;
+    [SerializeField] private TextMeshProUGUI hpComparison;
     [SerializeField] private Button backButton;
 
     [Header("Display")]
@@ -47,10 +48,10 @@ public class PartManagement : BaseMenu
         var damage = part.Value.ToString();
         if (pullNewPart && part.Value != savedPart.Value)
         {
-            var damageComparison = (part.Value - savedPart.Value).ToString();
+            var damageDifference = (part.Value - savedPart.Value).ToString();
             var isAbove = part.Value > savedPart.Value;
 
-            damage = isAbove ? "+" + damageComparison : damageComparison;
+            damage = isAbove ? "+" + damageDifference : damageDifference;
             damageLabel.color = isAbove ? plusColor : minusColor;
         }
         else damageLabel.color = sameColor;
@@ -59,6 +60,9 @@ public class PartManagement : BaseMenu
         tileBar.Value = part.PartHealth;
         tileBarCompare.Value = savedPart.PartHealth;
         tileBarBack.Value = part.MaxPartHealth;
+
+        var hpDifference = savedPart.PartHealth - part.PartHealth;
+        hpComparison.text = savedPart.PartHealth > part.PartHealth ? "-" + hpDifference.ToString() : "";
 
         ShowMenu();
     }
