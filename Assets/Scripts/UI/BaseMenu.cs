@@ -20,6 +20,7 @@ public class BaseMenu : MonoBehaviour
     [SerializeField] public UnityEvent onHide = new();
 
     private Graphic[] _graphics;
+    private bool _isTransitioning = false;
 
     private void Awake()
     {
@@ -29,6 +30,8 @@ public class BaseMenu : MonoBehaviour
 
     public void ShowMenu()
     {
+        if (_isTransitioning) return;
+
         StopAllCoroutines();
         onShow.Invoke();
         gameObject.SetActive(true);
@@ -38,6 +41,8 @@ public class BaseMenu : MonoBehaviour
 
     public void HideMenu()
     {
+        if (_isTransitioning) return;
+
         StopAllCoroutines();
         onHide.Invoke();
         gameObject.SetActive(true);
@@ -47,6 +52,9 @@ public class BaseMenu : MonoBehaviour
 
     private IEnumerator FadeMenu(bool fadeOut)
     {
+        yield return new WaitForEndOfFrame();
+
+        _isTransitioning = true;
         foreach (var graphic in _graphics)
         {
             if (ignoredGraphics.Contains(graphic) == true) continue;
@@ -59,6 +67,7 @@ public class BaseMenu : MonoBehaviour
 
         yield return new WaitForSeconds(fadeTime);
         fadeComplete.Invoke(fadeOut);
+        _isTransitioning = false;
         yield break;
     }
 }

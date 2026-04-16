@@ -7,30 +7,59 @@ using Yakanashe.Yautl;
 
 public class PartsScreen : BaseMenu
 {
+    [Header("Part Buttons")]
+    [SerializeField] private List<WorldButton> partButtons = new List<WorldButton>();
+
     [Header("Backpanel")]
     [SerializeField] private Image backPanel;
     [SerializeField] private Color backColor;
     [SerializeField] private float backFadeTime = 1;
     [SerializeField] private EaseType backEaseType = EaseType.Linear;
 
+    [Header("Back Button")]
+    [SerializeField] private Button backButton;
+    [SerializeField] private Image backButtonIcon;
+    [SerializeField] private Color buttonColor = Color.white;
+    [SerializeField] private float buttonFadeTime = .1f;
+    [SerializeField] private EaseType buttonEaseType = EaseType.Linear;
+
     [Header("Part Display")]
-    [SerializeField] private PartDisplay partDisplay;
+    [SerializeField] private PartManagement partDisplay;
 
     private void Start()
     {
         onHide.AddListener(() => partDisplay.gameObject.SetActive(false));
         partDisplay.onHide.AddListener(() => UpdateBackPanel(false));
+        partDisplay.onHide.AddListener(() => UpdateBackButton(true));
+
+        onHide.AddListener(() => SetPartButtons(false));
+        onShow.AddListener(() => SetPartButtons(true));
     }
 
     public void OpenPart(Part.PartType partType)
     {
         partDisplay.ShowPart(partType);
         UpdateBackPanel(true);
+        UpdateBackButton(false);
     }
 
     public void UpdateBackPanel(bool show)
     {
         backPanel.gameObject.SetActive(true);
         backPanel.ColorTo(show ? backColor : Color.clear, backFadeTime, backEaseType).OnComplete(() => backPanel.gameObject.SetActive(show));
+    }
+
+    public void UpdateBackButton(bool show)
+    {
+        backButton.gameObject.SetActive(true);
+
+        var color = show ? buttonColor : Color.clear;
+        backButton.image.ColorTo(color, buttonFadeTime, buttonEaseType).OnComplete(() => backButton.gameObject.SetActive(show));
+        backButtonIcon.ColorTo(color, buttonFadeTime, buttonEaseType);
+    }
+
+    public void SetPartButtons(bool active)
+    {
+        foreach (var button in partButtons) button.canBePressed = active;
     }
 }

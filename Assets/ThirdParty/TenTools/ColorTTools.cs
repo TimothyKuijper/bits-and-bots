@@ -12,7 +12,7 @@ public class ColorTTools
         return ColorUtility.ToHtmlStringRGBA(color);
     }
 
-    public static Color GetColorFromHex(Color color)
+    public static Color GetColorFromHex(string color)
     {
         ColorUtility.TryParseHtmlString("#" + color, out var newColor);
         return newColor;

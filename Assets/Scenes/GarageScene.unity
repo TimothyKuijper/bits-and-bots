@@ -544,7 +544,7 @@ GameObject:
   m_Component:
   - component: {fileID: 156573081}
   - component: {fileID: 156573083}
-  - component: {fileID: 156573082}
+  - component: {fileID: 156573084}
   m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
@@ -571,7 +571,15 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &156573082
+--- !u!222 &156573083
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156573080}
+  m_CullTransparentMesh: 1
+--- !u!114 &156573084
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -580,7 +588,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 156573080}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -591,21 +599,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 7afbe1876ccff5e4c96571ad745bc74d, type: 3}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
---- !u!222 &156573083
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 156573080}
-  m_CullTransparentMesh: 1
+  m_Sprite: {fileID: 21300000, guid: 7afbe1876ccff5e4c96571ad745bc74d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &191518954
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,9 +672,21 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   robotBuilder: {fileID: 1897596626}
+  partCollection: {fileID: 0}
   partLabel: {fileID: 257726158}
   rarityLabel: {fileID: 1121440142}
+  iconImage: {fileID: 156573084}
+  damageLabel: {fileID: 749979754}
   backButton: {fileID: 408058115}
+  partSprites:
+  - {fileID: 21300000, guid: 9c63b51755ec8c845b857cc73a35d606, type: 3}
+  - {fileID: 21300000, guid: 8063050a249eef441beb8cbbd04c086c, type: 3}
+  - {fileID: 21300000, guid: 2b06c35710693f640babb3dcf747d06a, type: 3}
+  - {fileID: 21300000, guid: e9af78578671a3345b8cbf82f1f030b5, type: 3}
+  - {fileID: 21300000, guid: ffdf80dc342e69344b2dccafe04c30ee, type: 3}
+  sameColor: {r: 0, g: 0, b: 0, a: 1}
+  minusColor: {r: 1, g: 0, b: 0, a: 1}
+  plusColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &202019459
 GameObject:
   m_ObjectHideFlags: 0

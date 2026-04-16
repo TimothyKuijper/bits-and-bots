@@ -10,6 +10,8 @@ public class MenuCameraPathing : MonoBehaviour
     [SerializeField] private EaseType easeType = EaseType.InOutSine;
     [SerializeField] private bool startAtFirst = false;
 
+    private bool _isTransitioning = false;
+
     public void Start()
     {
         if (startAtFirst) transform.position = pathPoints[0].position;
@@ -17,8 +19,15 @@ public class MenuCameraPathing : MonoBehaviour
 
     public void MoveToPosition(int transIndex, BaseMenu starterMenu, BaseMenu endMenu)
     {
+        if (_isTransitioning) return;
+        _isTransitioning = true;
+
         starterMenu.HideMenu();
         transIndex = Mathf.Clamp(transIndex, 0, pathPoints.Count - 1);
-        transform.MoveTo(pathPoints[transIndex].position, speed, easeType).OnComplete(() => endMenu.ShowMenu());
+        transform.MoveTo(pathPoints[transIndex].position, speed, easeType).OnComplete(() =>
+        {
+            endMenu.ShowMenu();
+            _isTransitioning = false;
+        });
     }
 }
