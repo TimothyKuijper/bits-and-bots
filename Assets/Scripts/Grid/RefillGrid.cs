@@ -9,9 +9,9 @@ public class RefillGrid : MonoBehaviour
         IconSwitcher.onMatchMade.AddListener(_ => CheckGridForEmptySpots());
     }
 
+    //check the grid for spaces that have been left empty on a match and marks them a rewritable then rebuilds the grid
     private void CheckGridForEmptySpots()
     {
-        
         for (int x = 0; x < gridData.grid.GetLength(1); x++)
         {
             var populated = new Queue<Icon>();
@@ -22,7 +22,6 @@ public class RefillGrid : MonoBehaviour
                 populated.Enqueue(toCheck);
                 gridData.grid[x, y] = new Icon();
             }
-
 
             var itteration = 0;
             while (populated.Count != 0)
