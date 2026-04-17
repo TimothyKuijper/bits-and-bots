@@ -18,10 +18,15 @@ public class PartManagement : BaseMenu
     [SerializeField] private TextMeshProUGUI rarityLabel;
     [SerializeField] private Image iconImage;
     [SerializeField] private TextMeshProUGUI damageLabel;
-    [SerializeField] private TileBar tileBar;
-    [SerializeField] private TileBar tileBarCompare;
-    [SerializeField] private TileBar tileBarBack;
-    [SerializeField] private TextMeshProUGUI hpComparison;
+
+    //[SerializeField] private TileBar tileBar;
+    //[SerializeField] private TileBar tileBarCompare;
+    //[SerializeField] private TileBar tileBarBack;
+    //[SerializeField] private TextMeshProUGUI hpComparison;
+    [SerializeField] private Slider hpBar;
+    [SerializeField] private TextMeshProUGUI deductLabel;
+    [SerializeField] private TextMeshProUGUI addLabel;
+
     [SerializeField] private Button backButton;
 
     [Header("Display")]
@@ -35,7 +40,7 @@ public class PartManagement : BaseMenu
         backButton.onClick.AddListener(HideMenu);
     }
 
-    public void ShowPart(PartType partType, bool pullNewPart = false)
+    public void ShowPart(PartType partType, bool pullNewPart = true)
     {
         var savedPart = LoadPart(partType);
         var part = pullNewPart ? PartUtility.ScalePart(partCollection.GetRandomPartByType(partType)) : savedPart;// INPUT SCALING FOR PART HERE
@@ -57,12 +62,36 @@ public class PartManagement : BaseMenu
         else damageLabel.color = sameColor;
         damageLabel.text = "Damage: " + damage;
 
-        tileBar.Value = part.PartHealth;
-        tileBarCompare.Value = savedPart.PartHealth;
-        tileBarBack.Value = part.MaxPartHealth;
+        //tileBar.Value = part.PartHealth;
+        //tileBarCompare.Value = savedPart.PartHealth;
+        //tileBarBack.Value = part.MaxPartHealth;
 
-        var hpDifference = savedPart.PartHealth - part.PartHealth;
-        hpComparison.text = savedPart.PartHealth > part.PartHealth ? "-" + hpDifference.ToString() : "";
+        //var hpDifference = savedPart.PartHealth - part.PartHealth;
+        //hpComparison.text = savedPart.PartHealth > part.PartHealth ? "-" + hpDifference.ToString() : "";
+        if (pullNewPart && part.MaxPartHealth != savedPart.MaxPartHealth)
+        {
+            if (part.PartHealth < savedPart.PartHealth)
+            {
+                hpBar.maxValue = savedPart.PartHealth;
+                hpBar.value = part.PartHealth;
+                deductLabel.text = "-" + (savedPart.PartHealth - part.PartHealth).ToString();
+                addLabel.text = "";
+            }
+            else
+            {
+                hpBar.maxValue = part.MaxPartHealth;
+                hpBar.value = part.PartHealth;
+                deductLabel.text = "";
+                addLabel.text = "+" + (part.PartHealth - savedPart.PartHealth).ToString();
+            }
+        }
+        else
+        {
+            hpBar.maxValue = part.MaxPartHealth;
+            hpBar.value = part.PartHealth;
+            addLabel.text = "";
+            deductLabel.text = "";
+        }
 
         ShowMenu();
     }
