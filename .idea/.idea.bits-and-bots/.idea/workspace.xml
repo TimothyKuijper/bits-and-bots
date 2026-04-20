@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d6856b51-23cf-41ed-9259-07a09a041c91" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.bits-and-bots/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.bits-and-bots/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Grid.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Grid.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/GridData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/GridData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/IconSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/IconSwitcher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/RefillGrid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/RefillGrid.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,13 +166,13 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Grid/IconSwitcher.cs</url>
-          <line>42</line>
+          <line>45</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Grid/IconSwitcher.cs" containingFunctionPresentation="Method 'CheckSwapDirection'">
             <startOffsets>
-              <option value="889" />
+              <option value="951" />
             </startOffsets>
             <endOffsets>
-              <option value="890" />
+              <option value="952" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="5" />

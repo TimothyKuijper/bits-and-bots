@@ -18,6 +18,8 @@ public class IconSwitcher : MonoBehaviour
     private List<Icon> match;
     
     public static UnityEvent<int> onMatchMade = new();
+
+    private bool IsSwapping;
     
     //enum to define the directions swiped in
     private enum Directions
@@ -30,6 +32,7 @@ public class IconSwitcher : MonoBehaviour
 
     void Update()
     {
+        if (IsSwapping) return;
         if (Input.GetMouseButtonDown(0)) initPos = Input.mousePosition;
         //check for touch
         if (Input.GetMouseButtonUp(0))
@@ -72,12 +75,13 @@ public class IconSwitcher : MonoBehaviour
     //function that swaps the desired Icons and initiates a tween
     private void PerformSwap()
     {
+        IsSwapping = true;
         selectedIcon = new();
         neighbouringIcon = new();
         var initposWorld = Camera.main.ScreenToWorldPoint(initPos);
         var gridx = Mathf.RoundToInt((initposWorld.x / gridData.tileSize) + (gridData.width - 1) / 2);
         var gridy = Mathf.RoundToInt((initposWorld.y / gridData.tileSize) + (gridData.height - 1));
-        selectedIcon.type = gridData.grid[gridx, gridy].type;
+        selectedIcon.data = gridData.grid[gridx, gridy].data;
         selectedIcon.pos = new Vector2(gridx, gridy);
         
         //selects the Icon in the direction of the swipe
@@ -85,25 +89,25 @@ public class IconSwitcher : MonoBehaviour
         {
             case Directions.Right:
                 if (!CheckBounds(neighbouringIcon)) return;
-                neighbouringIcon.type = gridData.grid[gridx + 1, gridy].type;
+                neighbouringIcon.data = gridData.grid[gridx + 1, gridy].data;
                 neighbouringIcon.pos = new Vector2(gridx + 1, gridy);
                 break;
             
             case Directions.Left:
                 if (!CheckBounds(neighbouringIcon)) return;
-                neighbouringIcon.type = gridData.grid[gridx - 1, gridy].type;
+                neighbouringIcon.data = gridData.grid[gridx - 1, gridy].data;
                 neighbouringIcon.pos = new Vector2(gridx - 1, gridy);
                 break;
             
             case Directions.Up:
                 if (!CheckBounds(neighbouringIcon)) return;
-                neighbouringIcon.type = gridData.grid[gridx, gridy + 1].type;
+                neighbouringIcon.data = gridData.grid[gridx, gridy + 1].data;
                 neighbouringIcon.pos = new Vector2(gridx, gridy + 1);
                 break;
             
             case Directions.Down:
                 if (!CheckBounds(neighbouringIcon)) return;
-                neighbouringIcon.type = gridData.grid[gridx, gridy - 1].type;
+                neighbouringIcon.data = gridData.grid[gridx, gridy - 1].data;
                 neighbouringIcon.pos = new Vector2(gridx, gridy - 1);
                 break;
         }
@@ -136,6 +140,7 @@ public class IconSwitcher : MonoBehaviour
                     Destroy(icon.GO);
                 }
                 onMatchMade.Invoke(amount);
+                IsSwapping = false;
             });
             initialIcon.GO.transform.position = neighbourIconPosition;
             neighbourIcon.GO.transform.position = inititalIconPosition;
@@ -153,6 +158,7 @@ public class IconSwitcher : MonoBehaviour
             neighbourIcon.GO.transform.MoveTo(initialIcon.GO.transform.position, .2f, EaseType.InOutCubic).OnComplete(() =>
             {
                 neighbourIcon.GO.transform.MoveTo(initialIcon.GO.transform.position, .2f, EaseType.InOutCubic);
+                IsSwapping = false;
             });
         }
     }
@@ -170,7 +176,7 @@ public class IconSwitcher : MonoBehaviour
     //then returning a bool, and the amount of Icons matched
     private bool CheckForMatch(int x, int y, out int matchAmount)
     {
-        var targetType = gridData.grid[x, y].type;
+        var targetData = gridData.grid[x, y].data;
         var visited = new List<Icon>();
         var toCheck = new Queue<Icon>();
         match = new List<Icon>();
@@ -187,7 +193,7 @@ public class IconSwitcher : MonoBehaviour
             
             foreach (var neighbour in neighbours)
             {
-                if (neighbour.type == targetType)
+                if (neighbour.data == targetData)
                 {
                     if (visited.Contains(neighbour)) continue;
                     match.Add(neighbour);

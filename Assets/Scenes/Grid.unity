@@ -270,11 +270,16 @@ MonoBehaviour:
   width: 7
   tileSize: 1.21
   icons:
-  - {fileID: 573450489, guid: c3fc14e339ffdc285b605ad5100509d6, type: 3}
-  - {fileID: -1608650141, guid: c3fc14e339ffdc285b605ad5100509d6, type: 3}
-  - {fileID: -1120988054, guid: c3fc14e339ffdc285b605ad5100509d6, type: 3}
-  - {fileID: -1005345691, guid: c3fc14e339ffdc285b605ad5100509d6, type: 3}
-  - {fileID: 242493123, guid: c3fc14e339ffdc285b605ad5100509d6, type: 3}
+  - id: Square
+    sprite: {fileID: 573450489, guid: c3fc14e339ffdc285b605ad5100509d6, type: 3}
+  - id: Circle
+    sprite: {fileID: -1608650141, guid: c3fc14e339ffdc285b605ad5100509d6, type: 3}
+  - id: Triangle
+    sprite: {fileID: -1120988054, guid: c3fc14e339ffdc285b605ad5100509d6, type: 3}
+  - id: Hexagon
+    sprite: {fileID: -1005345691, guid: c3fc14e339ffdc285b605ad5100509d6, type: 3}
+  - id: Diamond
+    sprite: {fileID: 242493123, guid: c3fc14e339ffdc285b605ad5100509d6, type: 3}
   iconPrefab: {fileID: 2911113952133606664, guid: 56e923d4d80fc303c9cf4a14c2db5dbf,
     type: 3}
 --- !u!114 &627263581
