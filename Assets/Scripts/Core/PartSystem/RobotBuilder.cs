@@ -22,11 +22,11 @@ public class RobotBuilder : MonoBehaviour
     {
         var robot = new Robot();
 
-        var head = PersistentData.Get(HeadKey, Instantiate(DefaultHead));
-        var weapon = PersistentData.Get(WeaponKey, Instantiate(DefaultWeapon));
-        var body = PersistentData.Get(BodyKey, Instantiate(DefaultBody));
-        var cpu = PersistentData.Get(CpuKey, Instantiate(DefaultCpu));
-        var movement = PersistentData.Get(MovementKey, Instantiate(DefaultMovement));
+        var head = PersistentData.GetSerialized(HeadKey, Instantiate(DefaultHead));
+        var weapon = PersistentData.GetSerialized(WeaponKey, Instantiate(DefaultWeapon));
+        var body = PersistentData.GetSerialized(BodyKey, Instantiate(DefaultBody));
+        var cpu = PersistentData.GetSerialized(CpuKey, Instantiate(DefaultCpu));
+        var movement = PersistentData.GetSerialized(MovementKey, Instantiate(DefaultMovement));
 
         robot.Head = head;
         robot.Weapon = weapon;

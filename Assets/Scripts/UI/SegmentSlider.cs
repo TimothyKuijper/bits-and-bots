@@ -20,8 +20,9 @@ public class SegmentSlider : MonoBehaviour
         SetSegments();
     }
 
-    private void SetSegments()
+    public void SetSegments()
     {
+        if (_slider == null) return;
         var length = fillImage.sprite.rect.width / _rectTransform.rect.width * (_slider.maxValue / 2);
         fillImage.pixelsPerUnitMultiplier = length;
     }

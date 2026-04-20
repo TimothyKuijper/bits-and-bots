@@ -677,6 +677,7 @@ MonoBehaviour:
   iconImage: {fileID: 156573084}
   damageLabel: {fileID: 749979754}
   hpBar: {fileID: 451442019}
+  sliderSegments: {fileID: 451442020}
   deductLabel: {fileID: 953836809}
   addLabel: {fileID: 672415353}
   backButton: {fileID: 408058115}

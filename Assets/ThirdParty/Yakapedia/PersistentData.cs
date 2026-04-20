@@ -63,6 +63,31 @@ namespace Yakapedia
         }
 
         /// <summary>
+        /// Returns a value corresponding to key in the currently selected save file if it exists. Uses JsonUtility to convert instead of straight converting.
+        /// </summary>
+        /// <typeparam name="T">Type to get</typeparam>
+        /// <param name="key">The key for the data entry.</param>
+        /// <param name="defaultValue">The default value to return if there is no entry using the key.</param>
+        public static T GetSerialized<T>(string key, T defaultValue = default)
+        {
+            if (_values == null)
+            {
+                GetDictionary();
+            }
+
+            if (_values.TryGetValue(key, out var val))
+            {
+                JsonUtility.FromJsonOverwrite(val.GetType() == typeof(string)
+                    ? val.ToString() : JsonUtility.ToJson(val), defaultValue);
+                return defaultValue;
+            }
+
+            Debug.Log($"Dictionary doesn't contain the key: {key}");
+
+            return defaultValue;
+        }
+
+        /// <summary>
         /// Checks if the key exists in the currently selected save file.
         /// </summary>
         /// <param name="key">The key for the data entry.</param>

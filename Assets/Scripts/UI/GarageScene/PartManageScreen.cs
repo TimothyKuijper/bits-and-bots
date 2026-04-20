@@ -19,6 +19,7 @@ public class PartManageScreen : BaseMenu
     [SerializeField] private TextMeshProUGUI damageLabel;
 
     [SerializeField] private Slider hpBar;
+    [SerializeField] private SegmentSlider sliderSegments;
     [SerializeField] private TextMeshProUGUI deductLabel;
     [SerializeField] private TextMeshProUGUI addLabel;
 
@@ -56,11 +57,12 @@ public class PartManageScreen : BaseMenu
         hpBar.value = savedPart.PartHealth;
         addLabel.text = "";
         deductLabel.text = "";
+        sliderSegments.SetSegments();
 
         ShowMenu();
 
         purchaseButton.onClick.RemoveAllListeners();
-        if (savedPart.IsBroken == false)
+        if (savedPart.IsDamaged == false)
         {
             purchaseButton.gameObject.SetActive(false);
             return;
@@ -77,6 +79,7 @@ public class PartManageScreen : BaseMenu
         purchaseButton.onClick.AddListener(() =>
         {
             savedPart.PartHealth = savedPart.MaxPartHealth;
+            robotBuilder.ChangeRobotPart(savedPart);
             // REMOVE MONEY
             HideMenu();
         });
@@ -106,7 +109,7 @@ public class PartManageScreen : BaseMenu
 
         if (comparePart.MaxPartHealth != savedPart.MaxPartHealth)
         {
-            if (savedPart.PartHealth < savedPart.PartHealth)
+            if (comparePart.PartHealth < savedPart.PartHealth)
             {
                 hpBar.maxValue = savedPart.PartHealth;
                 hpBar.value = comparePart.PartHealth;
@@ -128,10 +131,24 @@ public class PartManageScreen : BaseMenu
             addLabel.text = "";
             deductLabel.text = "";
         }
+        sliderSegments.SetSegments();
 
         ShowMenu();
+        purchaseButton.gameObject.SetActive(true);
 
-        // BUY
+        //if (savedPart.IsBroken == false) IF CAN PURCHASE
+        //{
+        //    return;
+        //}
+
+        purchaseLabel.text = "Buy - $ "; // + MONEY VALUE
+        purchaseButton.interactable = true;
+        purchaseButton.onClick.AddListener(() =>
+        {
+            robotBuilder.ChangeRobotPart(comparePart);
+            // REMOVE MONEY
+            HideMenu();
+        });
     }
 
     private Part LoadPart(PartType partType)
