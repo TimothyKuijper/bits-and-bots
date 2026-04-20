@@ -6,27 +6,15 @@ using UnityEngine;
 public class BattleBarExample : MonoBehaviour
 {
     public BattleBar bar;
-    public ParticleSystem PlayerParticles;
-    public ParticleSystem EnemyParticles;
 
     private void Start()
     {
-        bar.OnBarChanged.AddListener((type, amount) =>
-        {
-            if (type == EntityType.Player)
-            {
-                PlayerParticles.Play();
-                return;
-            }
-            
-            EnemyParticles.Play();
-        });
-        bar.OnBarFull.AddListener((type) => { Debug.Log("bar filled!"); });
+        IconSwitcher.onMatchMade.AddListener(AddToPlayer);
     }
 
-    public void AddToPlayer()
+    public void AddToPlayer(int amount)
     {
-        bar.Add(EntityType.Player, 5f);
+        bar.Add(EntityType.Player, amount);
     }
 
     public void AddToEnemy()
