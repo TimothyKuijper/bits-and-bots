@@ -16,6 +16,8 @@ public class SegmentSlider : MonoBehaviour
         _slider = GetComponent<Slider>();
         _slider.onValueChanged.AddListener((arg) => SetSegments());
         _rectTransform = GetComponent<RectTransform>();
+
+        SetSegments();
     }
 
     private void SetSegments()

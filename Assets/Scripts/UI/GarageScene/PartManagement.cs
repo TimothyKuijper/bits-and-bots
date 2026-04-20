@@ -19,10 +19,6 @@ public class PartManagement : BaseMenu
     [SerializeField] private Image iconImage;
     [SerializeField] private TextMeshProUGUI damageLabel;
 
-    //[SerializeField] private TileBar tileBar;
-    //[SerializeField] private TileBar tileBarCompare;
-    //[SerializeField] private TileBar tileBarBack;
-    //[SerializeField] private TextMeshProUGUI hpComparison;
     [SerializeField] private Slider hpBar;
     [SerializeField] private TextMeshProUGUI deductLabel;
     [SerializeField] private TextMeshProUGUI addLabel;
@@ -62,12 +58,6 @@ public class PartManagement : BaseMenu
         else damageLabel.color = sameColor;
         damageLabel.text = "Damage: " + damage;
 
-        //tileBar.Value = part.PartHealth;
-        //tileBarCompare.Value = savedPart.PartHealth;
-        //tileBarBack.Value = part.MaxPartHealth;
-
-        //var hpDifference = savedPart.PartHealth - part.PartHealth;
-        //hpComparison.text = savedPart.PartHealth > part.PartHealth ? "-" + hpDifference.ToString() : "";
         if (pullNewPart && part.MaxPartHealth != savedPart.MaxPartHealth)
         {
             if (part.PartHealth < savedPart.PartHealth)
@@ -93,7 +83,7 @@ public class PartManagement : BaseMenu
             deductLabel.text = "";
         }
 
-        ShowMenu();
+        Invoke(nameof(ShowMenu), .1f);
     }
 
     private Part LoadPart(PartType partType)
