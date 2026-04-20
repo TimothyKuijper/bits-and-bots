@@ -83,7 +83,7 @@ public class PartManagement : BaseMenu
             deductLabel.text = "";
         }
 
-        Invoke(nameof(ShowMenu), .1f);
+        ShowMenu();
     }
 
     private Part LoadPart(PartType partType)
