@@ -24,7 +24,7 @@ public class PartsScreen : BaseMenu
     [SerializeField] private EaseType buttonEaseType = EaseType.Linear;
 
     [Header("Part Display")]
-    [SerializeField] private PartManagement partDisplay;
+    [SerializeField] private PartManageScreen partDisplay;
 
     private void Start()
     {
@@ -39,6 +39,13 @@ public class PartsScreen : BaseMenu
     public void OpenPart(Part.PartType partType)
     {
         partDisplay.ShowPart(partType);
+        UpdateBackPanel(true);
+        UpdateBackButton(false);
+    }
+
+    public void ComparePart(Part part)
+    {
+        partDisplay.ShowComparePart(part);
         UpdateBackPanel(true);
         UpdateBackButton(false);
     }
