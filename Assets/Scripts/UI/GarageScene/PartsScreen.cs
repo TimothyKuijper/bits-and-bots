@@ -31,7 +31,6 @@ public class PartsScreen : BaseMenu
 
     private void Start()
     {
-        onHide.AddListener(() => partDisplay.gameObject.SetActive(false));
         partDisplay.onHide.AddListener(() => UpdateBackPanel(false));
         partDisplay.onHide.AddListener(() => UpdateBackButton(true));
         partDisplay.onHide.AddListener(() => UpdateMoney());
