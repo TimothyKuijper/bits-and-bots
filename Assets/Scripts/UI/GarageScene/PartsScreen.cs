@@ -23,6 +23,7 @@ public class PartsScreen : BaseMenu
     [SerializeField] private Button backButton;
     [SerializeField] private Image backButtonIcon;
     [SerializeField] private Color buttonColor = Color.white;
+    [SerializeField] private Color iconColor = Color.white;
     [SerializeField] private float buttonFadeTime = .1f;
     [SerializeField] private EaseType buttonEaseType = EaseType.Linear;
 
@@ -34,6 +35,7 @@ public class PartsScreen : BaseMenu
         partDisplay.onHide.AddListener(() => UpdateBackPanel(false));
         partDisplay.onHide.AddListener(() => UpdateBackButton(true));
         partDisplay.onHide.AddListener(() => UpdateMoney());
+        partDisplay.onShow.AddListener(() => UpdateMoney());
 
         onHide.AddListener(() => SetPartButtons(false));
         onShow.AddListener(() => SetPartButtons(true));
@@ -66,9 +68,10 @@ public class PartsScreen : BaseMenu
     {
         backButton.gameObject.SetActive(true);
 
-        var color = show ? buttonColor : Color.clear;
-        backButton.image.ColorTo(color, buttonFadeTime, buttonEaseType).OnComplete(() => backButton.gameObject.SetActive(show));
-        backButtonIcon.ColorTo(color, buttonFadeTime, buttonEaseType);
+        var button = show ? buttonColor : Color.clear;
+        var icon = show ? iconColor : Color.clear;
+        backButton.image.ColorTo(button, buttonFadeTime, buttonEaseType).OnComplete(() => backButton.gameObject.SetActive(show));
+        backButtonIcon.ColorTo(icon, buttonFadeTime, buttonEaseType);
     }
 
     public void SetPartButtons(bool active)
