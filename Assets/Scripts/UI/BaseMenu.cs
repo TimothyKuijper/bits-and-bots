@@ -52,17 +52,18 @@ public class BaseMenu : MonoBehaviour
 
     private IEnumerator FadeMenu(bool fadeOut)
     {
+        foreach (var graphic in _graphics)
+        {
+            if (ignoredGraphics.Contains(graphic) == true) continue;
+            if (graphic.color == ColorTTools.GetFadeColor(graphic, fadeOut)) graphic.color = ColorTTools.GetFadeColor(graphic, !fadeOut);
+        }
         yield return new WaitForEndOfFrame();
 
         _isTransitioning = true;
         foreach (var graphic in _graphics)
         {
             if (ignoredGraphics.Contains(graphic) == true) continue;
-
-            var fade = ColorTTools.GetFadeColor(graphic, fadeOut);
-            if (graphic.color == fade) graphic.color = ColorTTools.GetFadeColor(graphic, !fadeOut);
-
-            graphic.ColorTo(fade, fadeTime, fadeEase);
+            graphic.ColorTo(ColorTTools.GetFadeColor(graphic, fadeOut), fadeTime, fadeEase);
         }
 
         yield return new WaitForSeconds(fadeTime);
