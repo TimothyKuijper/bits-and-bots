@@ -16,6 +16,9 @@ public class PartsScreen : BaseMenu
     [SerializeField] private float backFadeTime = 1;
     [SerializeField] private EaseType backEaseType = EaseType.Linear;
 
+    [Header("Money")]
+    [SerializeField] private TextMeshProUGUI moneyLabel;
+
     [Header("Back Button")]
     [SerializeField] private Button backButton;
     [SerializeField] private Image backButtonIcon;
@@ -31,9 +34,13 @@ public class PartsScreen : BaseMenu
         onHide.AddListener(() => partDisplay.gameObject.SetActive(false));
         partDisplay.onHide.AddListener(() => UpdateBackPanel(false));
         partDisplay.onHide.AddListener(() => UpdateBackButton(true));
+        partDisplay.onHide.AddListener(() => UpdateMoney());
 
         onHide.AddListener(() => SetPartButtons(false));
         onShow.AddListener(() => SetPartButtons(true));
+        onShow.AddListener(() => UpdateMoney());
+
+        UpdateMoney();
     }
 
     public void OpenPart(Part.PartType partType)
@@ -69,4 +76,6 @@ public class PartsScreen : BaseMenu
     {
         foreach (var button in partButtons) button.canBePressed = active;
     }
+
+    public void UpdateMoney() => moneyLabel.text = "$ " + MoneyBag.CurrentMoney.ToString();
 }

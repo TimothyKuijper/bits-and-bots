@@ -3,14 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using static Part;
 
 public class PartManageScreen : BaseMenu
 {
-    [Header("Game")]
-    [SerializeField] private RobotBuilder robotBuilder;
-    // MONEY OBJECT HERE
+    private RobotBuilder _robotBuilder;
 
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI partLabel;
@@ -62,6 +61,8 @@ public class PartManageScreen : BaseMenu
         ShowMenu();
 
         purchaseButton.onClick.RemoveAllListeners();
+        var cost = 10; // CALCULATE COST WITH SCALING AND RARITY
+
         if (savedPart.IsDamaged == false)
         {
             purchaseButton.gameObject.SetActive(false);
@@ -69,18 +70,20 @@ public class PartManageScreen : BaseMenu
         }
         purchaseButton.gameObject.SetActive(true);
 
-        //if (savedPart.IsBroken == false) IF CAN PURCHASE
-        //{
-        //    return;
-        //}
+        if (MoneyBag.HasEnoughMoney(cost) == false)
+        {
+            purchaseLabel.text = "Too poor! - $ " + cost.ToString();
+            purchaseButton.interactable = false;
+            return;
+        }
 
-        purchaseLabel.text = "Repair - "; // + MONEY VALUE
+        purchaseLabel.text = "Repair - $ " + cost.ToString();
         purchaseButton.interactable = true;
         purchaseButton.onClick.AddListener(() =>
         {
             savedPart.PartHealth = savedPart.MaxPartHealth;
-            robotBuilder.ChangeRobotPart(savedPart);
-            // REMOVE MONEY
+            _robotBuilder.ChangeRobotPart(savedPart);
+            MoneyBag.RemoveMoney(cost);
             HideMenu();
         });
     }
@@ -134,26 +137,32 @@ public class PartManageScreen : BaseMenu
         sliderSegments.SetSegments();
 
         ShowMenu();
+
         purchaseButton.gameObject.SetActive(true);
+        purchaseButton.onClick.RemoveAllListeners();
+        var cost = 25; // CALCULATE COST WITH SCALING AND RARITY
 
-        //if (savedPart.IsBroken == false) IF CAN PURCHASE
-        //{
-        //    return;
-        //}
+        if (MoneyBag.HasEnoughMoney(cost) == false)
+        {
+            purchaseLabel.text = "Too poor! - $ " + cost.ToString();
+            purchaseButton.interactable = false;
+            return;
+        }
 
-        purchaseLabel.text = "Buy - $ "; // + MONEY VALUE
+        purchaseLabel.text = "Buy - $ " + cost.ToString(); 
         purchaseButton.interactable = true;
         purchaseButton.onClick.AddListener(() =>
         {
-            robotBuilder.ChangeRobotPart(comparePart);
-            // REMOVE MONEY
+            _robotBuilder.ChangeRobotPart(comparePart);
+            MoneyBag.RemoveMoney(cost);
             HideMenu();
         });
     }
 
     private Part LoadPart(PartType partType)
     {
-        var robot = robotBuilder.LoadRobot();
+        if (_robotBuilder == null) _robotBuilder = FindObjectsByType<RobotBuilder>(FindObjectsSortMode.None)[0];
+        var robot = _robotBuilder.LoadRobot();
         switch (partType)
         {
             case PartType.Body: return robot.Body;
