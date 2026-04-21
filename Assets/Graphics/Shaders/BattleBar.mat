@@ -53,10 +53,13 @@ Material:
     m_Ints: []
     m_Floats:
     - _AccentBubblesStep: 0.805
-    - _Fill: 0.362
+    - _Fill: 0.5
+    - _FresnelStrength: -0.5
+    - _HueWrapOffsetX: 1
     - _InverseBubblesStep: 0.707
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _SmudgeStrength: 0.06
     m_Colors:
     - _EnemyColorAccent: {r: 0.9103774, g: 0.115944296, b: 0.473075, a: 1}
     - _EnemyColorPrimary: {r: 1, g: 0.14509797, b: 0.5293826, a: 1}
