@@ -15,7 +15,6 @@ public class BaseMenu : MonoBehaviour
     [Header("Menu Flavor")]
     [SerializeField] private float fadeTime = 1.0f;
     [SerializeField] private EaseType fadeEase = EaseType.Linear;
-    [SerializeField] private List<Graphic> ignoredGraphics;
 
     [Header("Base Events")]
     [SerializeField] public UnityEvent<bool> fadeComplete = new();
@@ -61,7 +60,7 @@ public class BaseMenu : MonoBehaviour
         _canvasGroup.alpha = fadeOut ? 1 : 0;
         _isTransitioning = true;
         yield return new WaitForEndOfFrame();
-        _canvasGroup.FadeTo(fadeOut ? 0 : 1, fadeTime, EaseType.InOutSine);
+        _canvasGroup.FadeTo(fadeOut ? 0 : 1, fadeTime, fadeEase);
         yield return new WaitForSeconds(fadeTime);
         fadeComplete.Invoke(fadeOut);
         _isTransitioning = false;
