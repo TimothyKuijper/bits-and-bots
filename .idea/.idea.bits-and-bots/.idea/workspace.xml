@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d6856b51-23cf-41ed-9259-07a09a041c91" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.bits-and-bots/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.bits-and-bots/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Icon.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Icon.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Grid.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Grid.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/GridData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/GridData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/Yautl/Scripts/TweenExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThirdParty/Yautl/Scripts/TweenExtensions.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,13 +21,10 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5c71fc4f67b645d8a9b95e5904c5d1b1468c00/8b/3a801c91/Queue`1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/t1msaa/Projects/BitsAndBots/bits-and-bots/Assets/Scripts.meta" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts.meta" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/t1msaa/Projects/BitsAndBots/bits-and-bots/Assets/Scripts.meta" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Grid/IconSwitcher.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Grid/RefillGrid.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/t1msaa/Projects/BitsAndBots/bits-and-bots/Packages/manifest.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/t1msaa/Projects/BitsAndBots/bits-and-bots/Packages/manifest.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@16.0.6/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
