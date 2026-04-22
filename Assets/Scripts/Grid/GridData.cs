@@ -4,9 +4,16 @@ using UnityEngine;
 // A stuct to define Icon data and easily move it around
 public struct Icon
 {
-    public GridData.IconTypes type;
+    public IconData data;
     public Vector2 pos;
     public GameObject GO;
+}
+
+[System.Serializable]
+public class IconData
+{
+    public string id;
+    public GameObject prefab;
 }
 
 public class GridData : MonoBehaviour
@@ -19,22 +26,11 @@ public class GridData : MonoBehaviour
     private float offsetx;
     private float offsety;
 
-    [SerializeField] private Sprite[] icons;
+    [SerializeField] private List<IconData> icons;
 
     [SerializeField] private GameObject iconPrefab;
 
     private List<GameObject> gridObjects = new();
-    
-    //enum to define the types of icons
-    public enum IconTypes
-    {
-        _,
-        square,
-        circle,
-        triangle,
-        hexagon,
-        diamond
-    }
 
     public Icon[,] grid;
 
@@ -65,17 +61,14 @@ public class GridData : MonoBehaviour
                 
                 if (grid[x, y].GO != null) continue;
                 
-                var randomType = (IconTypes)Random.Range(1, 6);
+                var randomData = icons[Random.Range(0, icons.Count)];
                 grid[x, y] = new Icon();
-                grid[x, y].type = randomType;
+                grid[x, y].data = randomData;
                 grid[x, y].pos = new Vector2(x, y);
 
                 var pos = new Vector2(worldX, worldY);
-                var icon = Instantiate(iconPrefab, pos, Quaternion.identity);
+                var icon = Instantiate(randomData.prefab, pos, Quaternion.identity);
                 grid[x, y].GO = icon;
-
-                var index = (int)grid[x,y].type;
-                icon.GetComponent<SpriteRenderer>().sprite = icons[index -1];
                 gridObjects.Add(icon);
             }
         }
