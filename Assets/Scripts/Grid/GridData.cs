@@ -13,7 +13,7 @@ public struct Icon
 public class IconData
 {
     public string id;
-    public Sprite sprite;
+    public GameObject prefab;
 }
 
 public class GridData : MonoBehaviour
@@ -67,10 +67,8 @@ public class GridData : MonoBehaviour
                 grid[x, y].pos = new Vector2(x, y);
 
                 var pos = new Vector2(worldX, worldY);
-                var icon = Instantiate(iconPrefab, pos, Quaternion.identity);
+                var icon = Instantiate(randomData.prefab, pos, Quaternion.identity);
                 grid[x, y].GO = icon;
-
-                icon.GetComponent<SpriteRenderer>().sprite = randomData.sprite;
                 gridObjects.Add(icon);
             }
         }
