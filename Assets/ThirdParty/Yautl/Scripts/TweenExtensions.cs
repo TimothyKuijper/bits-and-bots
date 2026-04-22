@@ -54,5 +54,12 @@ namespace Yakanashe.Yautl
             TweenRunner.Instance.Run(tween);
             return tween;
         }
+
+        public static ITween FadeTo(this CanvasGroup group, float to, float duration, EaseType ease = EaseType.InOutSine)
+        {
+            var tween = new Tween<float>(group.transform, () => group.alpha, v => group.alpha = v, to, duration, ease, Mathf.Lerp);
+            TweenRunner.Instance.Run(tween);
+            return tween;
+        }
     }
 }
