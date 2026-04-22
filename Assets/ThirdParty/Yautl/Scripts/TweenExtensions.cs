@@ -54,6 +54,10 @@ namespace Yakanashe.Yautl
             TweenRunner.Instance.Run(tween);
             return tween;
         }
+        
+        public static ITween ShaderFloatTo(this Material material, string propertyName, float to, float duration, EaseType ease = EaseType.InOutSine)
+        {
+            var tween = new Tween<float>(material, () => material.GetFloat(propertyName), v => material.SetFloat(propertyName, v), to, duration, ease, Mathf.Lerp);
 
         public static ITween FadeTo(this CanvasGroup group, float to, float duration, EaseType ease = EaseType.InOutSine)
         {
