@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d0fc999c6a87874c8a898ad7775ab6c, type: 3}
+  m_Name: Default
+  m_EditorClassIdentifier: 
+  parts:
+  - {fileID: 11400000, guid: 680429ded5d4ef1498d5df796733e9f4, type: 2}
+  - {fileID: 11400000, guid: 0b70d1197185155488bba3e9c3e609ba, type: 2}
+  - {fileID: 11400000, guid: 9488ca3e6e47ca3419fa9be021eef9fb, type: 2}
+  - {fileID: 11400000, guid: 18f8d1e34e5131c4db176690204bbbe5, type: 2}
+  - {fileID: 11400000, guid: 8d50948a7dfb40344ba71c483bdcdc6a, type: 2}
+  - {fileID: 11400000, guid: d7ecdad84c727ee449743003ec877988, type: 2}
+  - {fileID: 11400000, guid: 73ffff9c443c2774590dcd78885757ff, type: 2}
+  - {fileID: 11400000, guid: 4f262e38443197748a245c44ab7e5dd6, type: 2}
+  - {fileID: 11400000, guid: ea3f5fe4808d1c349a312a538b427397, type: 2}
+  headParts:
+  - {fileID: 11400000, guid: 680429ded5d4ef1498d5df796733e9f4, type: 2}
+  weaponParts:
+  - {fileID: 11400000, guid: 9488ca3e6e47ca3419fa9be021eef9fb, type: 2}
+  - {fileID: 11400000, guid: d7ecdad84c727ee449743003ec877988, type: 2}
+  - {fileID: 11400000, guid: 73ffff9c443c2774590dcd78885757ff, type: 2}
+  - {fileID: 11400000, guid: 4f262e38443197748a245c44ab7e5dd6, type: 2}
+  - {fileID: 11400000, guid: ea3f5fe4808d1c349a312a538b427397, type: 2}
+  bodyParts:
+  - {fileID: 11400000, guid: 0b70d1197185155488bba3e9c3e609ba, type: 2}
+  movementParts:
+  - {fileID: 11400000, guid: 8d50948a7dfb40344ba71c483bdcdc6a, type: 2}
+  cpuParts:
+  - {fileID: 11400000, guid: 18f8d1e34e5131c4db176690204bbbe5, type: 2}
