@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// A stuct to define Icon data and easily move it around
 public struct Icon
 {
     public GridData.IconTypes type;
@@ -24,6 +25,7 @@ public class GridData : MonoBehaviour
 
     private List<GameObject> gridObjects = new();
     
+    //enum to define the types of icons
     public enum IconTypes
     {
         _,
@@ -43,6 +45,8 @@ public class GridData : MonoBehaviour
         BuildGrid();
     }
 
+    
+    //feature to initialize and update the grid
     public void BuildGrid()
     {
         gridObjects = new();
@@ -50,17 +54,6 @@ public class GridData : MonoBehaviour
         if (grid == null)
         {
             grid = new Icon[width, height];
-
-            for (int y = 0; y < height; y++)
-            {
-                for (int x = 0; x < width; x++)
-                {
-                    var randomType = (IconTypes)Random.Range(1, 6);
-                    grid[x, y] = new Icon();
-                    grid[x, y].type = randomType;
-                    grid[x, y].pos = new Vector2(x, y);
-                }
-            }
         }
 
         for (int y = 0; y < height; y++)

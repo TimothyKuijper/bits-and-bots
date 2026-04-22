@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Yakanashe.Yautl;
 
 public class IconSwitcher : MonoBehaviour
 {
@@ -13,9 +14,12 @@ public class IconSwitcher : MonoBehaviour
 
     private Icon selectedIcon;
     private Icon neighbouringIcon;
+
+    private List<Icon> match;
     
     public static UnityEvent<int> onMatchMade = new();
     
+    //enum to define the directions swiped in
     private enum Directions
     {
         Left,
@@ -27,16 +31,18 @@ public class IconSwitcher : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) initPos = Input.mousePosition;
-        
+        //check for touch
         if (Input.GetMouseButtonUp(0))
         {
-            CheckSwap();
+            CheckSwapDirection();
         }
     }
     
-    private void CheckSwap()
+    //check to see in which direction 
+    private void CheckSwapDirection()
     {
         var delta = Input.mousePosition - initPos;
+        if (Mathf.Abs(delta.x)  < 15 && Mathf.Abs(delta.y) < 15) return; 
         if (Mathf.Abs(delta.x) > Mathf.Abs(delta.y))
         {
             if (delta.x > 0)
@@ -60,10 +66,11 @@ public class IconSwitcher : MonoBehaviour
             }
         }
         
-        CheckTile();
+        PerformSwap();
     }
 
-    private void CheckTile()
+    //function that swaps the desired Icons and initiates a tween
+    private void PerformSwap()
     {
         selectedIcon = new();
         neighbouringIcon = new();
@@ -72,31 +79,30 @@ public class IconSwitcher : MonoBehaviour
         var gridy = Mathf.RoundToInt((initposWorld.y / gridData.tileSize) + (gridData.height - 1));
         selectedIcon.type = gridData.grid[gridx, gridy].type;
         selectedIcon.pos = new Vector2(gridx, gridy);
-
         
-        
+        //selects the Icon in the direction of the swipe
         switch (direction)
         {
             case Directions.Right:
-                if (!CheckBounds()) return;
+                if (!CheckBounds(neighbouringIcon)) return;
                 neighbouringIcon.type = gridData.grid[gridx + 1, gridy].type;
                 neighbouringIcon.pos = new Vector2(gridx + 1, gridy);
                 break;
             
             case Directions.Left:
-                if (!CheckBounds()) return;
+                if (!CheckBounds(neighbouringIcon)) return;
                 neighbouringIcon.type = gridData.grid[gridx - 1, gridy].type;
                 neighbouringIcon.pos = new Vector2(gridx - 1, gridy);
                 break;
             
             case Directions.Up:
-                if (!CheckBounds()) return;
+                if (!CheckBounds(neighbouringIcon)) return;
                 neighbouringIcon.type = gridData.grid[gridx, gridy + 1].type;
                 neighbouringIcon.pos = new Vector2(gridx, gridy + 1);
                 break;
             
             case Directions.Down:
-                if (!CheckBounds()) return;
+                if (!CheckBounds(neighbouringIcon)) return;
                 neighbouringIcon.type = gridData.grid[gridx, gridy - 1].type;
                 neighbouringIcon.pos = new Vector2(gridx, gridy - 1);
                 break;
@@ -114,29 +120,60 @@ public class IconSwitcher : MonoBehaviour
         var inititalIconPosition = initialIcon.GO.transform.position;
         var neighbourIconPosition = neighbourIcon.GO.transform.position;
         
+        //checks if the match is valid
         var validMatch = CheckForMatch((int)neighbouringIcon.pos.x, (int)neighbouringIcon.pos.y, out var amount);
-
+        
+        //tweens - and optionally destroys - the Icons that get swapped
         if (validMatch)
         {
+            if (neighbourIcon.GO == null) return;
+            neighbourIcon.GO.transform.MoveTo(initialIcon.GO.transform.position, .2f, EaseType.InOutCubic);
+            initialIcon.GO.transform.MoveTo(neighbourIcon.GO.transform.position, .2f, EaseType.InOutCubic).OnComplete(() =>
+            {
+                foreach (var icon in match)
+                {
+                    gridData.grid[(int)icon.pos.x, (int)icon.pos.y] = new Icon();
+                    Destroy(icon.GO);
+                }
+                onMatchMade.Invoke(amount);
+            });
             initialIcon.GO.transform.position = neighbourIconPosition;
             neighbourIcon.GO.transform.position = inititalIconPosition;
-            onMatchMade.Invoke(amount);
+            
+        }
+        else
+        {
+            if (initialIcon.GO == null) return;
+            initialIcon.GO.transform.MoveTo(neighbourIcon.GO.transform.position, .2f, EaseType.InOutCubic).OnComplete(() =>
+            {
+                initialIcon.GO.transform.MoveTo(neighbourIcon.GO.transform.position, .2f, EaseType.InOutCubic);
+            });
+                
+            
+            neighbourIcon.GO.transform.MoveTo(initialIcon.GO.transform.position, .2f, EaseType.InOutCubic).OnComplete(() =>
+            {
+                neighbourIcon.GO.transform.MoveTo(initialIcon.GO.transform.position, .2f, EaseType.InOutCubic);
+            });
         }
     }
 
-    private bool CheckBounds()
+    //checks if a requested locations is out of bounds
+    private bool CheckBounds(Icon request)
     {
-        return neighbouringIcon.pos.x >= 0 && neighbouringIcon.pos.y >= 0 &&
-               neighbouringIcon.pos.x < gridData.grid.GetLength(0) &&
-               neighbouringIcon.pos.y < gridData.grid.GetLength(1);
+        return request.pos.x >= 0 && request.pos.y >= 0 &&
+               request.pos.x < gridData.grid.GetLength(0) &&
+               request.pos.y < gridData.grid.GetLength(1);
     }
 
+    //checks if a match is valid by checking if there are 3 of more
+    //neighbours that are the same Icon as the initial Icon
+    //then returning a bool, and the amount of Icons matched
     private bool CheckForMatch(int x, int y, out int matchAmount)
     {
         var targetType = gridData.grid[x, y].type;
-        var match = new List<Icon>();
         var visited = new List<Icon>();
         var toCheck = new Queue<Icon>();
+        match = new List<Icon>();
         toCheck.Enqueue(gridData.grid[x, y]);
         match.Add(gridData.grid[x, y]);
 
@@ -148,7 +185,6 @@ public class IconSwitcher : MonoBehaviour
             var neighbours = CheckNeighbours(newX, newY);
             visited.Add(temp);
             
-
             foreach (var neighbour in neighbours)
             {
                 if (neighbour.type == targetType)
@@ -163,16 +199,12 @@ public class IconSwitcher : MonoBehaviour
         matchAmount = 0;
         if (match.Count < 3) return false;
         
-        foreach (var icon in match)
-        {
-            gridData.grid[(int)icon.pos.x, (int)icon.pos.y] = new Icon();
-            Destroy(icon.GO);
-        }
-
         matchAmount = match.Count;
         return true;
     }
 
+    
+    //gets all the neighbours involved in the swap
     private List<Icon> CheckNeighbours(int x, int y)
     {
         var neighbours = new List<Icon>();
