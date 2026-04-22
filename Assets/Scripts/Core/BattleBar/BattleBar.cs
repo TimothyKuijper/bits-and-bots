@@ -11,14 +11,14 @@ public class BattleBar : MonoBehaviour
     public UnityEvent<EntityType> OnBarFull;
     public UnityEvent<EntityType, float> OnBarChanged;
 
-    [SerializeField] private Slider battleSlider;
+    [SerializeField] private Material battleBarMaterial;
     
     private float _barFillAmount = 50;
     private ITween _sliderTween;
 
     private void Start()
     {
-        battleSlider.value = _barFillAmount / 100;
+        battleBarMaterial.ShaderFloatTo("_Fill", _barFillAmount * 0.01f, 0f, EaseType.Linear);
     }
 
     public void Add(EntityType type, float amount)
@@ -28,7 +28,7 @@ public class BattleBar : MonoBehaviour
         _barFillAmount += type == EntityType.Player ? amount : -amount;
         
         _sliderTween?.Stop();
-        _sliderTween = battleSlider.ValueTo(_barFillAmount / 100, 0.4f, EaseType.OutCubic);
+        _sliderTween = battleBarMaterial.ShaderFloatTo("_Fill", _barFillAmount * 0.01f, 0.4f, EaseType.OutCubic);
 
         if (_barFillAmount is > 0 and < 100) return;
         OnBarFull.Invoke(_barFillAmount >= 100 ? EntityType.Player : EntityType.Enemy);
@@ -39,7 +39,12 @@ public class BattleBar : MonoBehaviour
     {
         _barFillAmount = 50;
         _sliderTween?.Stop();
-        _sliderTween = battleSlider.ValueTo(_barFillAmount / 100, 0.4f, EaseType.OutCubic);
+        _sliderTween = battleBarMaterial.ShaderFloatTo("_Fill", _barFillAmount * 0.01f, 0.4f, EaseType.OutCubic);
+    }
+
+    private void OnDisable()
+    {
+        battleBarMaterial.SetFloat("_Fill", 0.5f);
     }
 }
 
