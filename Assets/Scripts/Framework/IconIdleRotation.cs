@@ -9,6 +9,6 @@ public class IconIdleRotation : MonoBehaviour
 
     private void Update()
     {
-        transform.rotation = Quaternion.Euler(0f + offset.x, 0f + offset.y, Mathf.Sin(Time.time * speed) * angle + offset.z);
+        transform.rotation = Quaternion.Euler(Mathf.Sin(Time.time * speed) * angle + offset.x, offset.y, offset.z);
     }
 }
