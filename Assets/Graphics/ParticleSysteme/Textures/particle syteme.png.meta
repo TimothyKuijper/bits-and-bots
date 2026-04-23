@@ -113,10 +113,10 @@ TextureImporter:
       name: particle syteme_0
       rect:
         serializedVersion: 2
-        x: 109
-        y: 593
-        width: 338
-        height: 338
+        x: 0
+        y: 578
+        width: 340
+        height: 446
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05dbff3c24344dd459460a9f4dcdf987
-      internalID: 534663655
+      spriteID: 30ef29ee718bf084796f1d9ab787c43a
+      internalID: -1627814976
       vertices: []
       indices: 
       edges: []
@@ -134,10 +134,10 @@ TextureImporter:
       name: particle syteme_1
       rect:
         serializedVersion: 2
-        x: 698
-        y: 636
-        width: 243
-        height: 216
+        x: 340
+        y: 578
+        width: 340
+        height: 446
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73375d01a472ac843be8e863c4cbcefc
-      internalID: 1201953386
+      spriteID: 9443764dae1b9314597e38b1ea34fd87
+      internalID: 30764320
       vertices: []
       indices: 
       edges: []
@@ -155,10 +155,10 @@ TextureImporter:
       name: particle syteme_2
       rect:
         serializedVersion: 2
-        x: 126
-        y: 109
-        width: 257
-        height: 282
+        x: 680
+        y: 578
+        width: 340
+        height: 446
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dde818f273195f34a86d348a051b76d0
-      internalID: 432765916
+      spriteID: a03ee04603dface408447e6f16773bc7
+      internalID: 757597795
       vertices: []
       indices: 
       edges: []
@@ -176,10 +176,10 @@ TextureImporter:
       name: particle syteme_3
       rect:
         serializedVersion: 2
-        x: 666
-        y: 168
-        width: 224
-        height: 219
+        x: 0
+        y: 132
+        width: 340
+        height: 446
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,8 +187,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20bcd9daf88aa8a4fa9f97a75870c9fe
-      internalID: 2104656163
+      spriteID: 012f442ff50885c4dbba5658a16327bc
+      internalID: 1594669436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particle syteme_4
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 132
+        width: 340
+        height: 446
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb8c7e7427f21824fbde9b4726d0558c
+      internalID: 2124495837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particle syteme_5
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 132
+        width: 340
+        height: 446
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44f36931087d12040b35adf963f3260b
+      internalID: -727538190
       vertices: []
       indices: 
       edges: []
@@ -196,7 +238,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c7a8cef33a458c64681d397db5beee2d
+    spriteID: 44e320b128d9122419b227159c78cd3f
     internalID: 0
     vertices: []
     indices: 
@@ -204,10 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      particle syteme_0: 534663655
-      particle syteme_1: 1201953386
-      particle syteme_2: 432765916
-      particle syteme_3: 2104656163
+      particle syteme_0: -1627814976
+      particle syteme_1: 30764320
+      particle syteme_2: 757597795
+      particle syteme_3: 1594669436
+      particle syteme_4: 2124495837
+      particle syteme_5: -727538190
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
