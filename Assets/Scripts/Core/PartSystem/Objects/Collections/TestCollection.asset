@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d0fc999c6a87874c8a898ad7775ab6c, type: 3}
+  m_Name: TestCollection
+  m_EditorClassIdentifier: 
+  parts:
+  - {fileID: 11400000, guid: 38c3f55a3a78a2143917281ccb45fa1d, type: 2}
+  - {fileID: 11400000, guid: 8dfea5b020b44e341abee5210ac7b593, type: 2}
+  - {fileID: 11400000, guid: 386b8d8fb8a995a458e8236a87e3ee72, type: 2}
+  - {fileID: 11400000, guid: 9a6004863b7e31a40b33efdb4ce7e22f, type: 2}
+  - {fileID: 11400000, guid: 18e10cc33235ea24091dd295f5078eb0, type: 2}
+  - {fileID: 11400000, guid: 734c03e1f2b2e094795ce3fb87ac76e2, type: 2}
+  - {fileID: 11400000, guid: 59ff5e74e8141db4a8dd16f8ebfdfb10, type: 2}
+  - {fileID: 11400000, guid: 58ae9db816dacaa44a2d3e4af44c200f, type: 2}
+  - {fileID: 11400000, guid: fde8807e400da8d419226b2c1a71e440, type: 2}
+  - {fileID: 11400000, guid: 049fb6cb9fe02444eb2cc79ae5066636, type: 2}
+  - {fileID: 11400000, guid: ee403daa53be74b449560827a3913d2f, type: 2}
+  - {fileID: 11400000, guid: debe4dadf11b3874abb681078257cd96, type: 2}
+  - {fileID: 11400000, guid: e135dd3cd278cb14e8c63d3b2293d392, type: 2}
+  - {fileID: 11400000, guid: d591a29dfcbcac7478412c4359c83bb6, type: 2}
+  - {fileID: 11400000, guid: bd097b34ba531884cb46a620e880b513, type: 2}
+  headParts:
+  - {fileID: 11400000, guid: 386b8d8fb8a995a458e8236a87e3ee72, type: 2}
+  - {fileID: 11400000, guid: 58ae9db816dacaa44a2d3e4af44c200f, type: 2}
+  - {fileID: 11400000, guid: e135dd3cd278cb14e8c63d3b2293d392, type: 2}
+  weaponParts:
+  - {fileID: 11400000, guid: 18e10cc33235ea24091dd295f5078eb0, type: 2}
+  - {fileID: 11400000, guid: 049fb6cb9fe02444eb2cc79ae5066636, type: 2}
+  - {fileID: 11400000, guid: bd097b34ba531884cb46a620e880b513, type: 2}
+  bodyParts:
+  - {fileID: 11400000, guid: 38c3f55a3a78a2143917281ccb45fa1d, type: 2}
+  - {fileID: 11400000, guid: 734c03e1f2b2e094795ce3fb87ac76e2, type: 2}
+  - {fileID: 11400000, guid: ee403daa53be74b449560827a3913d2f, type: 2}
+  movementParts:
+  - {fileID: 11400000, guid: 9a6004863b7e31a40b33efdb4ce7e22f, type: 2}
+  - {fileID: 11400000, guid: fde8807e400da8d419226b2c1a71e440, type: 2}
+  - {fileID: 11400000, guid: d591a29dfcbcac7478412c4359c83bb6, type: 2}
+  cpuParts:
+  - {fileID: 11400000, guid: 8dfea5b020b44e341abee5210ac7b593, type: 2}
+  - {fileID: 11400000, guid: 59ff5e74e8141db4a8dd16f8ebfdfb10, type: 2}
+  - {fileID: 11400000, guid: debe4dadf11b3874abb681078257cd96, type: 2}
