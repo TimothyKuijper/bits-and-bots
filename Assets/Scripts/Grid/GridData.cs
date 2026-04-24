@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Yakanashe.Yautl;
 
 // A stuct to define Icon data and easily move it around
 public struct Icon
@@ -45,6 +46,7 @@ public class GridData : MonoBehaviour
     //feature to initialize and update the grid
     public void BuildGrid()
     {
+        IconSwitcher.IsSwapping = true;
         gridObjects = new();
         
         if (grid == null)
@@ -67,9 +69,18 @@ public class GridData : MonoBehaviour
                 grid[x, y].pos = new Vector2(x, y);
 
                 var pos = new Vector2(worldX, worldY);
-                var icon = Instantiate(randomData.prefab, pos, Quaternion.identity);
+                var icon = Instantiate(randomData.prefab, pos, randomData.prefab.transform.rotation);
                 grid[x, y].GO = icon;
                 gridObjects.Add(icon);
+                var a = grid[x, y].GO.transform.position;
+                var b = a;
+                b.y = a.y + 2 + height;
+                grid[x, y].GO.transform.position = b;
+
+                grid[x, y].GO.transform.MoveTo(a, 1, EaseType.InCubic).OnComplete(() =>
+                {
+                    IconSwitcher.IsSwapping = false;
+                });
             }
         }
     }

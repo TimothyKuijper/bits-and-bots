@@ -960,27 +960,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   height: 7
   width: 7
-  tileSize: 1.21
+  tileSize: 1.23
   icons:
   - id: Battery
-    prefab: {fileID: 2029339195354217529, guid: ca485148d81069fe8b1792940a1a54b0,
+    prefab: {fileID: 4702219791930697863, guid: 10a7d7d470d462129811108daa86836c,
       type: 3}
   - id: Bottle
-    prefab: {fileID: 663837197257736360, guid: e9d523b6ae28b8b6c86a2f6f21077648, type: 3}
-  - id: Chip
-    prefab: {fileID: 3698338689496790913, guid: 985d2465aea4235b59ea6ad2044aa047,
+    prefab: {fileID: 2035885681844318710, guid: 536d9d13458e0ac129ba07a80b905428,
       type: 3}
+  - id: Chip
+    prefab: {fileID: 345795987399383424, guid: 0b91cee2a756ca51b89b3091bbae0dba, type: 3}
   - id: CPU
-    prefab: {fileID: 2252375176348810463, guid: 3b74510b77103be09bc34d247b35f988,
+    prefab: {fileID: 6396939788135130650, guid: e1a78b17525b0245091b771f7af41efb,
       type: 3}
   - id: Fan
-    prefab: {fileID: 8589943193276713640, guid: 6e5a0fe9edab23e61aaf7b261059002b,
+    prefab: {fileID: 7092384428791903763, guid: c7d2aae4a9adb42429509746833e2de4,
       type: 3}
   - id: Schroef
-    prefab: {fileID: 6876101899204155544, guid: 3454ccd5016fea6a8bb329fa4997865e,
-      type: 3}
-  - id: Tandwiel
-    prefab: {fileID: 7608024635961578753, guid: be8048eba7334b2bd8ed068d9137183a,
+    prefab: {fileID: 5526347803693417709, guid: ee012be11ec27a2bdae27f6c705fa15a,
       type: 3}
   iconPrefab: {fileID: 2911113952133606664, guid: 56e923d4d80fc303c9cf4a14c2db5dbf,
     type: 3}
@@ -1834,7 +1831,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1339988551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2391,12 +2388,12 @@ PrefabInstance:
     - target: {fileID: 6811633404956206407, guid: 831fb1921e379c84dab087c1fb7504b9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6811633404956206407, guid: 831fb1921e379c84dab087c1fb7504b9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.2
+      value: -8.66
       objectReference: {fileID: 0}
     - target: {fileID: 6811633404956206407, guid: 831fb1921e379c84dab087c1fb7504b9,
         type: 3}

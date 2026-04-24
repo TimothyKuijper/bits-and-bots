@@ -19,7 +19,7 @@ public class IconSwitcher : MonoBehaviour
     
     public static UnityEvent<int> onMatchMade = new();
 
-    private bool IsSwapping;
+    public static bool IsSwapping;
     
     //enum to define the directions swiped in
     private enum Directions
