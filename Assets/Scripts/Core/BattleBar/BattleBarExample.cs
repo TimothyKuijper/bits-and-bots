@@ -17,8 +17,8 @@ public class BattleBarExample : MonoBehaviour
         bar.Add(EntityType.Player, amount);
     }
 
-    public void AddToEnemy()
+    public void AddToEnemy(float amount = 5f)
     {
-        bar.Add(EntityType.Enemy, 5f);
+        bar.Add(EntityType.Enemy, amount);
     }
 }

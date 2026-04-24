@@ -70,7 +70,7 @@ public class PartManageScreen : BaseMenu
         }
         purchaseButton.gameObject.SetActive(true);
 
-        if (MoneyBag.HasEnoughMoney(cost) == false)
+        if (MoneyBag.HasEnough(cost) == false)
         {
             purchaseLabel.text = "Too poor! - $ " + cost.ToString();
             purchaseButton.interactable = false;
@@ -83,7 +83,7 @@ public class PartManageScreen : BaseMenu
         {
             savedPart.PartHealth = savedPart.MaxPartHealth;
             _robotBuilder.ChangeRobotPart(savedPart);
-            MoneyBag.RemoveMoney(cost);
+            MoneyBag.Remove(cost);
             HideMenu();
         });
     }
@@ -142,7 +142,7 @@ public class PartManageScreen : BaseMenu
         purchaseButton.onClick.RemoveAllListeners();
         var cost = 25; // CALCULATE COST WITH SCALING AND RARITY
 
-        if (MoneyBag.HasEnoughMoney(cost) == false)
+        if (MoneyBag.HasEnough(cost) == false)
         {
             purchaseLabel.text = "Too poor! - $ " + cost.ToString();
             purchaseButton.interactable = false;
@@ -154,7 +154,7 @@ public class PartManageScreen : BaseMenu
         purchaseButton.onClick.AddListener(() =>
         {
             _robotBuilder.ChangeRobotPart(comparePart);
-            MoneyBag.RemoveMoney(cost);
+            MoneyBag.Remove(cost);
             HideMenu();
         });
     }

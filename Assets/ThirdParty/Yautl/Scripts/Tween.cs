@@ -255,7 +255,16 @@ namespace Yakanashe.Yautl
             var from = _pingPongReverse ? _endValue : _startValue;
             var to = _pingPongReverse ? _startValue : _endValue;
 
-            _setter(_lerpFunc(from, to, eased));
+            try // hacky fix but it works
+            {
+                _setter(_lerpFunc(from, to, eased));
+            }
+            catch (MissingReferenceException)
+            {
+                Stop();
+                return;
+            }
+            
             _onUpdate?.Invoke(Progress);
         }
 
