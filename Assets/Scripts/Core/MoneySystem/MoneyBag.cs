@@ -10,14 +10,14 @@ public class MoneyBag
     private const string MoneyKey = "Money";
     private const int BaseMoneyAmount = 100;
 
-    static public void AddMoney(int amount) => PersistentData.Set(MoneyKey, CurrentMoney + amount);
+    public static void AddMoney(int amount) => PersistentData.Set(MoneyKey, CurrentMoney + amount);
 
-    static public int CurrentMoney => PersistentData.Get(MoneyKey, BaseMoneyAmount);
+    public static int CurrentMoney => PersistentData.Get(MoneyKey, BaseMoneyAmount);
 
-    static public bool HasEnoughMoney(int checkSum)
+    public static bool HasEnoughMoney(int checkSum)
     {
         return CurrentMoney >= checkSum;
     }
 
-    static public void RemoveMoney(int amount) => PersistentData.Set(MoneyKey, CurrentMoney - amount);
+    public static void RemoveMoney(int amount) => PersistentData.Set(MoneyKey, CurrentMoney - amount);
 }
