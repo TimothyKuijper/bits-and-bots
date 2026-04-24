@@ -21,12 +21,12 @@ public class PartRollButton : MonoBehaviour
         var button = GetComponent<Button>();
         button.onClick.AddListener(() =>
         {
-            if (MoneyBag.HasEnoughMoney(cost) == false)
+            if (MoneyBag.HasEnough(cost) == false)
             {
                 OnNotEnough.Invoke();
                 return;
             }
-            MoneyBag.RemoveMoney(cost);
+            MoneyBag.Remove(cost);
 
             OnEnough.Invoke();
             partScreen.ComparePart(partCollection.GetRandomPart());
