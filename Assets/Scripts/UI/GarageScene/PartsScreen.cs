@@ -8,7 +8,7 @@ using Yakanashe.Yautl;
 public class PartsScreen : BaseMenu
 {
     [Header("Part Buttons")]
-    [SerializeField] private List<WorldButton> partButtons = new List<WorldButton>();
+    [SerializeField] private List<PartButton> partButtons = new();
 
     [Header("Backpanel")]
     [SerializeField] private Image backPanel;
@@ -32,6 +32,8 @@ public class PartsScreen : BaseMenu
 
     private void Start()
     {
+        foreach (var button in partButtons) button.SetPartMenu(this);
+
         partDisplay.onHide.AddListener(() => UpdateBackPanel(false));
         partDisplay.onHide.AddListener(() => UpdateBackButton(true));
         partDisplay.onHide.AddListener(() => UpdateMoney());

@@ -7,7 +7,6 @@ using UnityEngine;
 public class PartButton : WorldButton
 {
     [Header("Part Menu")]
-    [SerializeField] private PartsScreen partMenu;
     [SerializeField] private Part.PartType partType;
 
     [Header("Physics")]
@@ -32,7 +31,6 @@ public class PartButton : WorldButton
         _rigidBody = GetComponent<Rigidbody>();
 
         SetupHinge();
-        onPressed.AddListener(() => partMenu.OpenPart(partType));
         onPressed.AddListener(() => _rigidBody.AddForce(force, forceMode));
     }
 
@@ -50,6 +48,8 @@ public class PartButton : WorldButton
         hingeRigidBody.useGravity = false;
         hingeRigidBody.constraints = RigidbodyConstraints.FreezeAll;
     }
+
+    public void SetPartMenu(PartsScreen partMenu) => onPressed.AddListener(() => partMenu.OpenPart(partType));
 
     private void OnDrawGizmos()
     {
