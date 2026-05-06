@@ -5,11 +5,11 @@ using Yakapedia;
 
 public class RobotBuilder : MonoBehaviour
 {
-    [SerializeField] private Part DefaultHead;
-    [SerializeField] private Part DefaultWeapon;
-    [SerializeField] private Part DefaultBody;
-    [SerializeField] private Part DefaultCpu;
-    [SerializeField] private Part DefaultMovement;
+    [SerializeField] private Part defaultHead;
+    [SerializeField] private Part defaultWeapon;
+    [SerializeField] private Part defaultBody;
+    [SerializeField] private Part defaultCpu;
+    [SerializeField] private Part defaultMovement;
 
     private const string HeadKey = "Head"; 
     private const string WeaponKey = "Weapon"; 
@@ -22,11 +22,11 @@ public class RobotBuilder : MonoBehaviour
     {
         var robot = new Robot();
 
-        var head = PersistentData.GetSerialized(HeadKey, Instantiate(DefaultHead));
-        var weapon = PersistentData.GetSerialized(WeaponKey, Instantiate(DefaultWeapon));
-        var body = PersistentData.GetSerialized(BodyKey, Instantiate(DefaultBody));
-        var cpu = PersistentData.GetSerialized(CpuKey, Instantiate(DefaultCpu));
-        var movement = PersistentData.GetSerialized(MovementKey, Instantiate(DefaultMovement));
+        var head = PersistentData.GetSerialized(HeadKey, Instantiate(defaultHead));
+        var weapon = PersistentData.GetSerialized(WeaponKey, Instantiate(defaultWeapon));
+        var body = PersistentData.GetSerialized(BodyKey, Instantiate(defaultBody));
+        var cpu = PersistentData.GetSerialized(CpuKey, Instantiate(defaultCpu));
+        var movement = PersistentData.GetSerialized(MovementKey, Instantiate(defaultMovement));
 
         robot.Head = head;
         robot.Weapon = weapon;

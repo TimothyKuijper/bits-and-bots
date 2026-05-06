@@ -34,7 +34,7 @@ public class Part : ScriptableObject, IConvertible
         get => CurrentPartHealth;
         set
         {
-            CurrentPartHealth = value >= MaxPartHealth ? MaxPartHealth : value;
+            CurrentPartHealth = Mathf.Clamp(value, 0, MaxPartHealth);
         }
     }
     public bool IsDamaged => CurrentPartHealth < MaxPartHealth;
