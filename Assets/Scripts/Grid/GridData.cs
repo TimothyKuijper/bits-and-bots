@@ -29,7 +29,7 @@ public class GridData : MonoBehaviour
 
     [SerializeField] private List<IconData> icons;
 
-    [SerializeField] private GameObject iconPrefab;
+    [SerializeField] private GameObject gridObject;
 
     private List<GameObject> gridObjects = new();
 
@@ -43,7 +43,7 @@ public class GridData : MonoBehaviour
     }
 
     
-    //feature to initialize and update the grid
+    //function to initialize and update the grid
     public void BuildGrid()
     {
         IconSwitcher.IsSwapping = true;
@@ -58,6 +58,7 @@ public class GridData : MonoBehaviour
         {
             for (int x = 0; x < width; x++)
             {
+                
                 var worldX = (x - offsetx) * tileSize;
                 var worldY = (y - offsety) * tileSize;
                 
@@ -69,7 +70,11 @@ public class GridData : MonoBehaviour
                 grid[x, y].pos = new Vector2(x, y);
 
                 var pos = new Vector2(worldX, worldY);
+                
                 var icon = Instantiate(randomData.prefab, pos, randomData.prefab.transform.rotation);
+                
+                icon.transform.parent = gridObject.transform;
+                
                 grid[x, y].GO = icon;
                 gridObjects.Add(icon);
                 var a = grid[x, y].GO.transform.position;

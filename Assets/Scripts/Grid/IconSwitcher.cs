@@ -44,8 +44,10 @@ public class IconSwitcher : MonoBehaviour
     //check to see in which direction 
     private void CheckSwapDirection()
     {
+        
         var delta = Input.mousePosition - initPos;
         if (Mathf.Abs(delta.x)  < 15 && Mathf.Abs(delta.y) < 15) return; 
+        
         if (Mathf.Abs(delta.x) > Mathf.Abs(delta.y))
         {
             if (delta.x > 0)
@@ -78,6 +80,8 @@ public class IconSwitcher : MonoBehaviour
         IsSwapping = true;
         selectedIcon = new();
         neighbouringIcon = new();
+        
+        
         var initposWorld = Camera.main.ScreenToWorldPoint(initPos);
         var gridx = Mathf.RoundToInt((initposWorld.x / gridData.tileSize) + (gridData.width - 1) / 2);
         var gridy = Mathf.RoundToInt((initposWorld.y / gridData.tileSize) + (gridData.height - 1));
