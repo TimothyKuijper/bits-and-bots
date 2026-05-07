@@ -37,7 +37,7 @@ public class PartDisplayExample : MonoBehaviour
     private void Start()
     {
         saveButton.onClick.AddListener(() => PersistentData.Set(PartKey, _lastPart));
-        loadButton.onClick.AddListener(() => DisplayPart(PersistentData.Get(PartKey, partCollection.parts[0])));
+        loadButton.onClick.AddListener(() => DisplayPart(PersistentData.Get(PartKey, partCollection.Parts[0])));
         rerollButton.onClick.AddListener(Generate);
         scalingSlider.onValueChanged.AddListener((value) => scalingLabel.text = "Scale: " + value.RoundToNearest(0.01f).ToString());
     }
