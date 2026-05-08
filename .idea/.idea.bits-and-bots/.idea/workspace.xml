@@ -6,13 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d6856b51-23cf-41ed-9259-07a09a041c91" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.bits-and-bots/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.bits-and-bots/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Art/ArtMenus.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Art/ArtMenus.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/FinalArena.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/FinalArena.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/GridData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/GridData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/IconSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/IconSwitcher.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/Wiper/Materials/WiperMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThirdParty/Wiper/Materials/WiperMaterial.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,13 +113,15 @@
       <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="4425">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="4425" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list />
+        <list>
+          <MonoRuntime />
+        </list>
       </option>
       <option name="selectedOptions">
         <list />
@@ -161,6 +159,7 @@
       <workItem from="1776981962233" duration="2783000" />
       <workItem from="1777031237683" duration="1794000" />
       <workItem from="1777795329534" duration="2725000" />
+      <workItem from="1778227066444" duration="3384000" />
     </task>
     <servers />
   </component>
