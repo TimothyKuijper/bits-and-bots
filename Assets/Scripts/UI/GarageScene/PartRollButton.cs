@@ -10,7 +10,6 @@ public class PartRollButton : MonoBehaviour
 {
     [SerializeField] private int cost = 10;
     [SerializeField] private PartCollection partCollection;
-    // ADD SCALING OBJECT HERE
     [SerializeField] private PartsScreen partScreen;
 
     public UnityEvent OnEnough;
@@ -27,9 +26,10 @@ public class PartRollButton : MonoBehaviour
                 return;
             }
             MoneyBag.Remove(cost);
-
             OnEnough.Invoke();
-            partScreen.ComparePart(partCollection.GetRandomPart());
+
+            var part = PartUtility.ScalePart(partCollection.GetRandomPart(), RankSystem.CurrentRank);
+            partScreen.ComparePart(part);
         });
 
         var buttonText = GetComponentInChildren<TextMeshProUGUI>();

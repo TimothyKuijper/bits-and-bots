@@ -5120,11 +5120,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb5f937b8dcb0584c88381a8cedaadd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultHead: {fileID: 0}
-  defaultWeapon: {fileID: 0}
-  defaultBody: {fileID: 0}
-  defaultCpu: {fileID: 0}
-  defaultMovement: {fileID: 0}
+  defaultHead: {fileID: 11400000, guid: 680429ded5d4ef1498d5df796733e9f4, type: 2}
+  defaultWeapon: {fileID: 11400000, guid: 9488ca3e6e47ca3419fa9be021eef9fb, type: 2}
+  defaultBody: {fileID: 11400000, guid: 0b70d1197185155488bba3e9c3e609ba, type: 2}
+  defaultCpu: {fileID: 11400000, guid: 18f8d1e34e5131c4db176690204bbbe5, type: 2}
+  defaultMovement: {fileID: 11400000, guid: 8d50948a7dfb40344ba71c483bdcdc6a, type: 2}
 --- !u!4 &1897596627
 Transform:
   m_ObjectHideFlags: 0
