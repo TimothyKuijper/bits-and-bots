@@ -5120,11 +5120,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb5f937b8dcb0584c88381a8cedaadd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefaultHead: {fileID: 11400000, guid: 680429ded5d4ef1498d5df796733e9f4, type: 2}
-  DefaultWeapon: {fileID: 11400000, guid: 9488ca3e6e47ca3419fa9be021eef9fb, type: 2}
-  DefaultBody: {fileID: 11400000, guid: 0b70d1197185155488bba3e9c3e609ba, type: 2}
-  DefaultCpu: {fileID: 11400000, guid: 18f8d1e34e5131c4db176690204bbbe5, type: 2}
-  DefaultMovement: {fileID: 11400000, guid: 8d50948a7dfb40344ba71c483bdcdc6a, type: 2}
+  defaultHead: {fileID: 0}
+  defaultWeapon: {fileID: 0}
+  defaultBody: {fileID: 0}
+  defaultCpu: {fileID: 0}
+  defaultMovement: {fileID: 0}
 --- !u!4 &1897596627
 Transform:
   m_ObjectHideFlags: 0
@@ -5515,6 +5515,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1950944878}
   - component: {fileID: 1950944879}
+  - component: {fileID: 1950944880}
   m_Layer: 5
   m_Name: Rank
   m_TagString: Untagged
@@ -5594,6 +5595,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1950944880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950944877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b03b57074ba1a024b817c72a099fb71c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2015344313
 GameObject:
   m_ObjectHideFlags: 0
