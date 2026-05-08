@@ -22,10 +22,11 @@ public class WinLoseArena : MonoBehaviour
         SelectUI.SetActive(true);
         if (type == EntityType.Player)
         {
+            RankSystem.Win();
             WinScreen.MoveTo(new Vector3(7, 0, 0), 1f, EaseType.OutCubic);
             return;
         }
-
+        RankSystem.Loss();
         LoseScreen.MoveTo(new Vector3(20, 0, 0), 1f, EaseType.OutCubic);
     }
 
