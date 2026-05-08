@@ -220,7 +220,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1477975902}
-  - component: {fileID: 1477975901}
   - component: {fileID: 1477975900}
   m_Layer: 0
   m_Name: Rank System
@@ -239,18 +238,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ed122d266957f7488e7a319aa5003d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1477975901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1477975899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f98014f411c98514ab3e6a22df63008d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1477975902

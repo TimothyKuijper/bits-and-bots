@@ -5,20 +5,15 @@ public class RankSystemTester : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
-            RankSystem.RankUp();
+            RankSystem.Win();
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
-            RankDown();
+            RankSystem.Loss();
 
         if (Input.GetKeyDown(KeyCode.R))
             RankSystem.ResetRank();
-    }
 
-    private void RankDown()
-    {
-        int before = RankSystem.CurrentRank;
-        RankSystem.RankDown();
-        if (before == 0)
-            Debug.Log("Floor held — rank stayed at 0");
+        if (Input.GetKeyDown(KeyCode.Space))
+            Debug.Log($"Rank: {RankSystem.CurrentRank} | XP: {RankSystem.CurrentXp}");
     }
 }

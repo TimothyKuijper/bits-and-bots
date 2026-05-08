@@ -3,11 +3,18 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
+  <component name="CMakeSettings">
+    <configurations />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d6856b51-23cf-41ed-9259-07a09a041c91" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.bits-and-bots/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.bits-and-bots/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tests/RankSystem.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tests/RankSystem.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/RankSystem/RankSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/RankSystem/RankSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/RankSystem/RankSystemTester.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/RankSystem/RankSystemTester.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,6 +162,8 @@
       <workItem from="1776981962233" duration="2783000" />
       <workItem from="1777025249294" duration="649000" />
       <workItem from="1777390760115" duration="1549000" />
+      <workItem from="1778044493788" duration="2514000" />
+      <workItem from="1778154746633" duration="3394000" />
     </task>
     <servers />
   </component>
