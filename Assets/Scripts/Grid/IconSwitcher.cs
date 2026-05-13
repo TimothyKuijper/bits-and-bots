@@ -145,7 +145,8 @@ public class IconSwitcher : MonoBehaviour
         var neighbourIconPosition = neighbourIcon.GO.transform.position;
         
         //checks if the match is valid
-        var validMatch = CheckForMatch((int)neighbouringIcon.pos.x, (int)neighbouringIcon.pos.y, out var amount);
+        var validMatch = CheckForMatch((int)neighbouringIcon.pos.x, (int)neighbouringIcon.pos.y, out var amount, out var matches);
+        var validMatchOpposite = CheckForMatch((int)initialIcon.pos.x, (int)initialIcon.pos.y, out var amountOpposit, out var matchesOpposite);
         
         //tweens - and optionally destroys - the Icons that get swapped
         if (validMatch)
@@ -153,16 +154,16 @@ public class IconSwitcher : MonoBehaviour
             if (neighbourIcon.GO == null) return;
             TweenRunner.Instance.KillAllFrom(neighbourIcon.GO.transform);
             TweenRunner.Instance.KillAllFrom(initialIcon.GO.transform);
-            
+
             neighbourIcon.GO.transform.MoveTo(initialIcon.GO.transform.position, .2f, EaseType.InOutCubic);
             initialIcon.GO.transform.MoveTo(neighbourIcon.GO.transform.position, .2f, EaseType.InOutCubic).OnComplete(() =>
             {
-                foreach (var icon in match)
+                foreach (var icon in matches)
                 {
                     gridData.grid[(int)icon.pos.x, (int)icon.pos.y] = new Icon();
                     Destroy(icon.GO);
                 }
-                onMatchMade.Invoke(amount);
+                onMatchMade.Invoke(amount);                
                 IsSwapping = false;
             });
             initialIcon.GO.transform.position = neighbourIconPosition;
@@ -197,14 +198,14 @@ public class IconSwitcher : MonoBehaviour
     //checks if a match is valid by checking if there are 3 of more
     //neighbours that are the same Icon as the initial Icon
     //then returning a bool, and the amount of Icons matched
-    public bool CheckForMatch(int x, int y, out int matchAmount)
+    public bool CheckForMatch(int x, int y, out int matchAmount, out List<Icon> matches)
     {
         var targetData = gridData.grid[x, y].data;
         var visited = new List<Icon>();
         var toCheck = new Queue<Icon>();
-        match = new List<Icon>();
+        matches = new List<Icon>();
         toCheck.Enqueue(gridData.grid[x, y]);
-        match.Add(gridData.grid[x, y]);
+        matches.Add(gridData.grid[x, y]);
 
         while (toCheck.Count > 0)
         {
@@ -219,16 +220,16 @@ public class IconSwitcher : MonoBehaviour
                 if (neighbour.data == targetData)
                 {
                     if (visited.Contains(neighbour)) continue;
-                    match.Add(neighbour);
+                    matches.Add(neighbour);
                     toCheck.Enqueue(neighbour);
                 }
             }
         }
 
         matchAmount = 0;
-        if (match.Count < 3) return false;
+        if (matches.Count < 3) return false;
         
-        matchAmount = match.Count;
+        matchAmount = matches.Count;
         return true;
     }
 

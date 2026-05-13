@@ -86,7 +86,7 @@ public class GridData : MonoBehaviour
                 gridTransform.position = b;
                 gridTransform.localScale = Vector3.zero;
 
-                iconSwitcher.CheckForMatch(x, y, out var amount);
+                iconSwitcher.CheckForMatch(x, y, out var amount, out _);
                 IconSwitcher.onMatchMade.Invoke(amount);
 
                 gridTransform.ScaleTo(Vector3.one, 1.1f, EaseType.InOutCubic);

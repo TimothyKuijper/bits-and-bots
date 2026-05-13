@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Yakanashe.Yautl;
 
 public class RefillGrid : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class RefillGrid : MonoBehaviour
         IconSwitcher.onMatchMade.AddListener(_ => CheckGridForEmptySpots());
     }
 
-    //check the grid for spaces that have been left empty on a match and marks them a rewritable then rebuilds the grid
+    //check the grid for spaces that have been left empty on a match and marks them as rewritable then rebuilds the grid
     private void CheckGridForEmptySpots()
     {
         for (int x = 0; x < gridData.grid.GetLength(1); x++)
@@ -35,6 +36,7 @@ public class RefillGrid : MonoBehaviour
                 
                 icon.pos = new Vector2(x, itteration);
                 gridData.grid[x, itteration] = icon;
+                icon.GO.transform.MoveTo(new Vector2(worldX, worldY), .5f, EaseType.InCubic);
                 icon.GO.transform.position = new Vector2(worldX, worldY);
                 itteration++;
             }
