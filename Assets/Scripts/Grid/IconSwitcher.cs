@@ -197,7 +197,7 @@ public class IconSwitcher : MonoBehaviour
     //checks if a match is valid by checking if there are 3 of more
     //neighbours that are the same Icon as the initial Icon
     //then returning a bool, and the amount of Icons matched
-    private bool CheckForMatch(int x, int y, out int matchAmount)
+    public bool CheckForMatch(int x, int y, out int matchAmount)
     {
         var targetData = gridData.grid[x, y].data;
         var visited = new List<Icon>();

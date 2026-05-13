@@ -27,6 +27,8 @@ public class GridData : MonoBehaviour
     private float offsetx;
     private float offsety;
 
+    [SerializeField] private IconSwitcher iconSwitcher;
+
     [SerializeField] private List<IconData> icons;
 
     [SerializeField] private GameObject gridObject;
@@ -72,17 +74,23 @@ public class GridData : MonoBehaviour
                 var pos = new Vector2(worldX, worldY);
                 
                 var icon = Instantiate(randomData.prefab, pos, randomData.prefab.transform.rotation);
-                
                 icon.transform.parent = gridObject.transform;
                 
                 grid[x, y].GO = icon;
+                var gridTransform = grid[x, y].GO.transform;
+                
                 gridObjects.Add(icon);
-                var a = grid[x, y].GO.transform.position;
+                var a = gridTransform.position;
                 var b = a;
                 b.y = a.y + 2 + height;
-                grid[x, y].GO.transform.position = b;
+                gridTransform.position = b;
+                gridTransform.localScale = Vector3.zero;
 
-                grid[x, y].GO.transform.MoveTo(a, 1, EaseType.InCubic).OnComplete(() =>
+                iconSwitcher.CheckForMatch(x, y, out var amount);
+                IconSwitcher.onMatchMade.Invoke(amount);
+
+                gridTransform.ScaleTo(Vector3.one, 1.1f, EaseType.InOutCubic);
+                gridTransform.MoveTo(a, 1, EaseType.InCubic).OnComplete(() =>
                 {
                     IconSwitcher.IsSwapping = false;
                 });
