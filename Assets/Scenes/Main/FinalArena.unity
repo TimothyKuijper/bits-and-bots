@@ -518,6 +518,7 @@ MonoBehaviour:
   height: 7
   width: 7
   tileSize: 1.21
+  iconSwitcher: {fileID: 211215173}
   icons:
   - id: bottle
     prefab: {fileID: 8318771817892145644, guid: 587bd6c4bdb175d4ab49ccab006cbb9d,
@@ -536,7 +537,7 @@ MonoBehaviour:
   - id: screw
     prefab: {fileID: 7165860413932050561, guid: 37854b49523e5e041a631bb6b0ff63d0,
       type: 3}
-  gridObject: {fileID: 6182343681134788938}
+  gridObject: {fileID: 211215170}
 --- !u!1 &344665430
 GameObject:
   m_ObjectHideFlags: 0
