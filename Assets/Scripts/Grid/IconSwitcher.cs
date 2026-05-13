@@ -10,7 +10,7 @@ public class IconSwitcher : MonoBehaviour
     
     private Vector3 initPos;
 
-    private Directions direction;
+    private DirectionTypes direction;
 
     private Icon selectedIcon;
     private Icon neighbouringIcon;
@@ -19,10 +19,10 @@ public class IconSwitcher : MonoBehaviour
     
     public static UnityEvent<int> onMatchMade = new();
 
-    private bool IsSwapping;
+    public static bool IsSwapping;
     
     //enum to define the directions swiped in
-    private enum Directions
+    private enum DirectionTypes
     {
         Left,
         Right,
@@ -44,28 +44,30 @@ public class IconSwitcher : MonoBehaviour
     //check to see in which direction 
     private void CheckSwapDirection()
     {
+        
         var delta = Input.mousePosition - initPos;
         if (Mathf.Abs(delta.x)  < 15 && Mathf.Abs(delta.y) < 15) return; 
+        
         if (Mathf.Abs(delta.x) > Mathf.Abs(delta.y))
         {
             if (delta.x > 0)
             {
-                direction = Directions.Right;
+                direction = DirectionTypes.Right;
             }
             else
             {
-                direction = Directions.Left;
+                direction = DirectionTypes.Left;
             }
         }
         else
         {
             if (delta.y > 0)
             {
-                direction = Directions.Up;
+                direction = DirectionTypes.Up;
             }
             else
             {
-                direction = Directions.Down;
+                direction = DirectionTypes.Down;
             }
         }
         
@@ -78,6 +80,8 @@ public class IconSwitcher : MonoBehaviour
         IsSwapping = true;
         selectedIcon = new();
         neighbouringIcon = new();
+        
+        
         var initposWorld = Camera.main.ScreenToWorldPoint(initPos);
         var gridx = Mathf.RoundToInt((initposWorld.x / gridData.tileSize) + (gridData.width - 1) / 2);
         var gridy = Mathf.RoundToInt((initposWorld.y / gridData.tileSize) + (gridData.height - 1));
@@ -87,26 +91,42 @@ public class IconSwitcher : MonoBehaviour
         //selects the Icon in the direction of the swipe
         switch (direction)
         {
-            case Directions.Right:
-                if (!CheckBounds(neighbouringIcon)) return;
+            case DirectionTypes.Right:
+                if (!CheckBounds(new Vector2(gridx + 1, gridy)))
+                {
+                    IsSwapping = false;
+                    return;
+                }
                 neighbouringIcon.data = gridData.grid[gridx + 1, gridy].data;
                 neighbouringIcon.pos = new Vector2(gridx + 1, gridy);
                 break;
             
-            case Directions.Left:
-                if (!CheckBounds(neighbouringIcon)) return;
+            case DirectionTypes.Left:
+                if (!CheckBounds(new Vector2(gridx - 1, gridy)))
+                {
+                    IsSwapping = false;
+                    return;
+                }                
                 neighbouringIcon.data = gridData.grid[gridx - 1, gridy].data;
                 neighbouringIcon.pos = new Vector2(gridx - 1, gridy);
                 break;
             
-            case Directions.Up:
-                if (!CheckBounds(neighbouringIcon)) return;
+            case DirectionTypes.Up:
+                if (!CheckBounds(new Vector2(gridx, gridy + 1)))
+                {
+                    IsSwapping = false;
+                    return;
+                }                
                 neighbouringIcon.data = gridData.grid[gridx, gridy + 1].data;
                 neighbouringIcon.pos = new Vector2(gridx, gridy + 1);
                 break;
             
-            case Directions.Down:
-                if (!CheckBounds(neighbouringIcon)) return;
+            case DirectionTypes.Down:
+                if (!CheckBounds(new Vector2(gridx, gridy - 1)))
+                {
+                    IsSwapping = false;
+                    return;
+                }                
                 neighbouringIcon.data = gridData.grid[gridx, gridy - 1].data;
                 neighbouringIcon.pos = new Vector2(gridx, gridy - 1);
                 break;
@@ -131,6 +151,9 @@ public class IconSwitcher : MonoBehaviour
         if (validMatch)
         {
             if (neighbourIcon.GO == null) return;
+            TweenRunner.Instance.KillAllFrom(neighbourIcon.GO.transform);
+            TweenRunner.Instance.KillAllFrom(initialIcon.GO.transform);
+            
             neighbourIcon.GO.transform.MoveTo(initialIcon.GO.transform.position, .2f, EaseType.InOutCubic);
             initialIcon.GO.transform.MoveTo(neighbourIcon.GO.transform.position, .2f, EaseType.InOutCubic).OnComplete(() =>
             {
@@ -164,11 +187,11 @@ public class IconSwitcher : MonoBehaviour
     }
 
     //checks if a requested locations is out of bounds
-    private bool CheckBounds(Icon request)
+    private bool CheckBounds(Vector2 request)
     {
-        return request.pos.x >= 0 && request.pos.y >= 0 &&
-               request.pos.x < gridData.grid.GetLength(0) &&
-               request.pos.y < gridData.grid.GetLength(1);
+        return request.x >= 0 && request.y >= 0 &&
+               request.x < gridData.grid.GetLength(0) &&
+               request.y < gridData.grid.GetLength(1);
     }
 
     //checks if a match is valid by checking if there are 3 of more
