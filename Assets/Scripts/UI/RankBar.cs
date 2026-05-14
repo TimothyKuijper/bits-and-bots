@@ -1,11 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 [RequireComponent(typeof(Slider))]
 public class RankBar : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI rankText;
+    [SerializeField] private TextMeshProUGUI xpText;
+
     private Slider _slider;  
        
     void Start()
@@ -19,5 +21,7 @@ public class RankBar : MonoBehaviour
     public void UpdateBar()
     {
         _slider.value = RankSystem.CurrentXp;
+        rankText.text = $"Rank {RankSystem.CurrentRank}";
+        xpText.text = $"{RankSystem.CurrentXp}/{RankSystem.XpThreshold}";
     }
 }
