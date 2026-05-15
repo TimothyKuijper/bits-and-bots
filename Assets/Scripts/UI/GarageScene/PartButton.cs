@@ -41,7 +41,7 @@ public class PartButton : WorldButton
     private void SetupSpring()
     {
         var newObject = new GameObject();
-        newObject.name = name + spring;
+        newObject.name = name + SpringSuffix;
 
         var springObject = newObject.AddComponent<SpringJoint>();
         springObject.transform.position = OffsetPosition;
