@@ -20,8 +20,8 @@ public class PartButton : WorldButton
     [SerializeField] private float tolerance = .025f;
 
     [Header("Debug")]
-    [SerializeField] private Color hingeColor = Color.blue;
-    [SerializeField] private float hingeSize = .2f;
+    [SerializeField] private Color springColor = Color.blue;
+    [SerializeField] private float springSize = .2f;
 
     public Vector3 OffsetPosition => _origin == Vector3.zero ? transform.position : _origin + offset;
     private const string SpringSuffix = "Spring";
@@ -61,7 +61,7 @@ public class PartButton : WorldButton
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = hingeColor;
-        Gizmos.DrawSphere(OffsetPosition, hingeSize);
+        Gizmos.color = springColor;
+        Gizmos.DrawSphere(OffsetPosition, springSize);
     }
 }
