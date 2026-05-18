@@ -1,0 +1,301 @@
+fileFormatVersion: 2
+guid: 9821324291dbac94b89a86e23c0d8b3b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: particle syteme 1_3
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 682
+        width: 220
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be4b547dcf46a684592d630ba2849cd3
+      internalID: -575479600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particle syteme 1_4
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 713
+        width: 220
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6526094a4fe044241935db2c248d4718
+      internalID: -952884651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particle syteme 1_10
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 705
+        width: 220
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4f40e6cad371b943b4b3d3af1129e43
+      internalID: 1912987425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particle syteme 1_32
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 231
+        width: 220
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66ee20133f9089b48b1899edb1f68d3c
+      internalID: -293767018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particle syteme 1_37
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 224
+        width: 220
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c451b6a7388ea3640a85bcb22c5e73c3
+      internalID: 752406549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particle syteme 1_38
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 223
+        width: 220
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 941e22f72ab3282408f58dc6134adf7b
+      internalID: -1648727778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 7afe3e10cab8b584a8e20130c4b87324
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      particle syteme 1_0: 842348192
+      particle syteme 1_1: 1212778877
+      particle syteme 1_10: 1912987425
+      particle syteme 1_11: -2137267816
+      particle syteme 1_12: 2094537613
+      particle syteme 1_13: 1142883955
+      particle syteme 1_14: 547986737
+      particle syteme 1_15: -1978398398
+      particle syteme 1_16: 1243907004
+      particle syteme 1_17: -981418853
+      particle syteme 1_18: -1642932455
+      particle syteme 1_19: -671327329
+      particle syteme 1_2: 1409694159
+      particle syteme 1_20: 1081605013
+      particle syteme 1_21: 822131428
+      particle syteme 1_22: -1608997209
+      particle syteme 1_23: -1323302161
+      particle syteme 1_24: 343609086
+      particle syteme 1_25: -1856695785
+      particle syteme 1_26: -200393628
+      particle syteme 1_27: -1195473967
+      particle syteme 1_28: 1807448293
+      particle syteme 1_29: -119895340
+      particle syteme 1_3: -575479600
+      particle syteme 1_30: 1307778688
+      particle syteme 1_31: 969520813
+      particle syteme 1_32: -293767018
+      particle syteme 1_33: -1641223871
+      particle syteme 1_34: -569922735
+      particle syteme 1_35: -16524653
+      particle syteme 1_36: 686630581
+      particle syteme 1_37: 752406549
+      particle syteme 1_38: -1648727778
+      particle syteme 1_39: 1519622209
+      particle syteme 1_4: -952884651
+      particle syteme 1_40: 1243215059
+      particle syteme 1_41: -1601362553
+      particle syteme 1_42: -509220558
+      particle syteme 1_43: -306985215
+      particle syteme 1_44: 2044005652
+      particle syteme 1_45: -1756370187
+      particle syteme 1_46: -1146667770
+      particle syteme 1_47: 1340488497
+      particle syteme 1_5: 192619119
+      particle syteme 1_6: -1255048009
+      particle syteme 1_7: -449581907
+      particle syteme 1_8: -196511939
+      particle syteme 1_9: 323133485
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
