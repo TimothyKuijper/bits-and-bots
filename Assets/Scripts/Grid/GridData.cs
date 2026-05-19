@@ -48,7 +48,7 @@ public class GridData : MonoBehaviour
     //function to initialize and update the grid
     public void BuildGrid()
     {
-        IconSwitcher.IsSwapping = true;
+        iconSwitcher.IsSwapping = true;
         gridObjects = new();
         
         if (grid == null)
@@ -87,12 +87,12 @@ public class GridData : MonoBehaviour
                 gridTransform.localScale = Vector3.zero;
 
                 iconSwitcher.CheckForMatch(x, y, out var amount, out _);
-                IconSwitcher.onMatchMade.Invoke(amount);
+                iconSwitcher.onMatchMade.Invoke(amount);
 
                 gridTransform.ScaleTo(Vector3.one, 1.1f, EaseType.InOutCubic);
                 gridTransform.MoveTo(a, 1, EaseType.InCubic).OnComplete(() =>
                 {
-                    IconSwitcher.IsSwapping = false;
+                    iconSwitcher.IsSwapping = false;
                 });
             }
         }
