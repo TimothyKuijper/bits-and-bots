@@ -24,6 +24,7 @@ public class MenuCameraPathing : MonoBehaviour
 
         starterMenu.HideMenu();
         transIndex = Mathf.Clamp(transIndex, 0, pathPoints.Count - 1);
+        transform.RotateTo(pathPoints[transIndex].rotation, speed, easeType);
         transform.MoveTo(pathPoints[transIndex].position, speed, easeType).OnComplete(() =>
         {
             endMenu.ShowMenu();
