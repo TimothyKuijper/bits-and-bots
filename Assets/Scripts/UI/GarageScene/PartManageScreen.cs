@@ -34,6 +34,10 @@ public class PartManageScreen : BaseMenu
     [SerializeField] private Color minusColor = Color.red;
     [SerializeField] private Color plusColor = Color.green;
 
+    [Header("Stats")]
+    [SerializeField] private int rarityRepairCost = 6;
+    [SerializeField] private int rarityCost = 4;
+
     private void Start()
     {
         backButton.onClick.AddListener(HideMenu);
@@ -61,7 +65,7 @@ public class PartManageScreen : BaseMenu
         ShowMenu();
 
         purchaseButton.onClick.RemoveAllListeners();
-        var cost = 10; // CALCULATE COST WITH SCALING AND RARITY
+        var cost = rarityRepairCost * savedPart.Rarity;
 
         if (savedPart.IsDamaged == false)
         {
@@ -140,7 +144,7 @@ public class PartManageScreen : BaseMenu
 
         purchaseButton.gameObject.SetActive(true);
         purchaseButton.onClick.RemoveAllListeners();
-        var cost = 25; // CALCULATE COST WITH SCALING AND RARITY
+        var cost = rarityCost * comparePart.Rarity;
 
         if (MoneyBag.HasEnough(cost) == false)
         {

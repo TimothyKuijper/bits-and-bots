@@ -26,9 +26,9 @@ namespace Yakanashe.Yautl
             return tween;
         }
 
-        public static ITween RotateTo(this Transform transform, Vector3 eulerTo, float duration, EaseType ease = EaseType.InOutSine)
+        public static ITween RotateTo(this Transform transform, Quaternion to, float duration, EaseType ease = EaseType.InOutSine)
         {
-            var tween = new Tween<Vector3>(transform, () => transform.eulerAngles, v => transform.eulerAngles = v, eulerTo, duration, ease, Vector3.Lerp);
+            var tween = new Tween<Quaternion>(transform, () => transform.rotation, v => transform.rotation = v, to, duration, ease, Quaternion.Lerp);
             TweenRunner.Instance.Run(tween);
             return tween;
         }
