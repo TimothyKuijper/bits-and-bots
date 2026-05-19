@@ -33,6 +33,7 @@ public class RankSystem
             return;
         }
         PersistentData.Set(XpKey, newXp);
+        Object.FindObjectOfType<RankBar>()?.UpdateBar();
     }
 
     public static void Loss()
