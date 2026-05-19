@@ -5,9 +5,10 @@ using Yakanashe.Yautl;
 public class RefillGrid : MonoBehaviour
 {
     [SerializeField] private GridData gridData;   
+    [SerializeField] private IconSwitcher iconSwitcher;   
     void Start()
     {
-        IconSwitcher.onMatchMade.AddListener(_ => CheckGridForEmptySpots());
+        iconSwitcher.onMatchMade.AddListener(_ => CheckGridForEmptySpots());
     }
 
     //check the grid for spaces that have been left empty on a match and marks them as rewritable then rebuilds the grid
