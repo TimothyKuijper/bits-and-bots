@@ -762,11 +762,11 @@ MonoBehaviour:
   purchaseButton: {fileID: 1324623165}
   purchaseLabel: {fileID: 1393856101}
   partSprites:
-  - {fileID: 21300000, guid: 9c63b51755ec8c845b857cc73a35d606, type: 3}
-  - {fileID: 21300000, guid: 8063050a249eef441beb8cbbd04c086c, type: 3}
-  - {fileID: 21300000, guid: 2b06c35710693f640babb3dcf747d06a, type: 3}
-  - {fileID: 21300000, guid: e9af78578671a3345b8cbf82f1f030b5, type: 3}
-  - {fileID: 21300000, guid: ffdf80dc342e69344b2dccafe04c30ee, type: 3}
+  - {fileID: -1901160069, guid: a90cae2795316a04cb5aa3910f339bdd, type: 3}
+  - {fileID: -279751732, guid: a90cae2795316a04cb5aa3910f339bdd, type: 3}
+  - {fileID: -1195641816, guid: a90cae2795316a04cb5aa3910f339bdd, type: 3}
+  - {fileID: -765779486, guid: a90cae2795316a04cb5aa3910f339bdd, type: 3}
+  - {fileID: -1083253627, guid: a90cae2795316a04cb5aa3910f339bdd, type: 3}
   sameColor: {r: 1, g: 1, b: 1, a: 1}
   minusColor: {r: 1, g: 0.45858043, b: 0.3820755, a: 1}
   plusColor: {r: 0.4588793, g: 1, b: 0.3843137, a: 1}
