@@ -763,10 +763,10 @@ MonoBehaviour:
   purchaseLabel: {fileID: 1393856101}
   partSprites:
   - {fileID: -1901160069, guid: a90cae2795316a04cb5aa3910f339bdd, type: 3}
-  - {fileID: -279751732, guid: a90cae2795316a04cb5aa3910f339bdd, type: 3}
   - {fileID: -1195641816, guid: a90cae2795316a04cb5aa3910f339bdd, type: 3}
-  - {fileID: -765779486, guid: a90cae2795316a04cb5aa3910f339bdd, type: 3}
   - {fileID: -1083253627, guid: a90cae2795316a04cb5aa3910f339bdd, type: 3}
+  - {fileID: -765779486, guid: a90cae2795316a04cb5aa3910f339bdd, type: 3}
+  - {fileID: -279751732, guid: a90cae2795316a04cb5aa3910f339bdd, type: 3}
   sameColor: {r: 1, g: 1, b: 1, a: 1}
   minusColor: {r: 1, g: 0.45858043, b: 0.3820755, a: 1}
   plusColor: {r: 0.4588793, g: 1, b: 0.3843137, a: 1}
@@ -8641,7 +8641,7 @@ GameObject:
   - component: {fileID: 8356339618169792974}
   - component: {fileID: 8356339618169792976}
   m_Layer: 6
-  m_Name: CpuButton
+  m_Name: BodyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8801,7 +8801,7 @@ GameObject:
   - component: {fileID: 5665037883842897909}
   - component: {fileID: 5665037883842897911}
   m_Layer: 6
-  m_Name: BodyButton
+  m_Name: WeaponButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8871,7 +8871,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   canBePressed: 1
-  partType: 2
+  partType: 1
   forceMode: 1
   force: {x: 0, y: 0, z: 3.5}
   offset: {x: 0, y: 0, z: 0.01}
@@ -9214,7 +9214,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   canBePressed: 1
-  partType: 4
+  partType: 2
   forceMode: 1
   force: {x: 0, y: 0, z: 3.5}
   offset: {x: 0, y: 0, z: 0.01}
@@ -9240,7 +9240,7 @@ GameObject:
   - component: {fileID: 9058861714940510051}
   - component: {fileID: 9058861714940510053}
   m_Layer: 6
-  m_Name: WeaponButton
+  m_Name: ChipButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9461,7 +9461,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   canBePressed: 1
-  partType: 1
+  partType: 4
   forceMode: 1
   force: {x: 0, y: 0, z: 3.5}
   offset: {x: 0, y: 0, z: 0.01}
