@@ -974,7 +974,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 964530194}
-  jabKey: l_baradge
+  animationKeys:
+  - l_punch
+  - m_punch
+  - h_punch
+  - l_kick
+  - m_kick
+  - h_kick
   iconSwitcher: {fileID: 211215173}
   transition: {fileID: 344665433}
 --- !u!114 &344665433
@@ -2368,7 +2374,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e25117b9505bbbf448e98d7131534959,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 93.58
+      value: 94.06
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e25117b9505bbbf448e98d7131534959,
         type: 3}
@@ -2378,7 +2384,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e25117b9505bbbf448e98d7131534959,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.45
+      value: 13.43
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e25117b9505bbbf448e98d7131534959,
         type: 3}
@@ -3000,12 +3006,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 800, y: 1920}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -3773,7 +3779,7 @@ PrefabInstance:
     - target: {fileID: 2987819457353356071, guid: a691dbc12782c2f46af938d05b8ed5f4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 98.1
+      value: 97.42
       objectReference: {fileID: 0}
     - target: {fileID: 2987819457353356071, guid: a691dbc12782c2f46af938d05b8ed5f4,
         type: 3}
@@ -3783,7 +3789,7 @@ PrefabInstance:
     - target: {fileID: 2987819457353356071, guid: a691dbc12782c2f46af938d05b8ed5f4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.63
+      value: 10.74
       objectReference: {fileID: 0}
     - target: {fileID: 2987819457353356071, guid: a691dbc12782c2f46af938d05b8ed5f4,
         type: 3}
