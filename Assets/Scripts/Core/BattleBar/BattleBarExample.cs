@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class BattleBarExample : MonoBehaviour
 {
-    public BattleBar bar;
+    [SerializeField] private BattleBar bar;
+    [SerializeField] private IconSwitcher iconSwitcher;
 
     private void Start()
     {
-        IconSwitcher.onMatchMade.AddListener(AddToPlayer);
+        iconSwitcher.onMatchMade.AddListener(AddToPlayer);
     }
 
     public void AddToPlayer(int amount)
@@ -17,8 +18,8 @@ public class BattleBarExample : MonoBehaviour
         bar.Add(EntityType.Player, amount);
     }
 
-    public void AddToEnemy()
+    public void AddToEnemy(float amount = 5f)
     {
-        bar.Add(EntityType.Enemy, 5f);
+        bar.Add(EntityType.Enemy, amount);
     }
 }

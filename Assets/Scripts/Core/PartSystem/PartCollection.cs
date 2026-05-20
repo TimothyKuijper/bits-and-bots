@@ -1,13 +1,10 @@
-using NUnit.Framework;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Robot PartCollection", menuName = "Bits & Bots/Parts/New PartCollection")]
 public class PartCollection : ScriptableObject
 {
-    [SerializeField] public List<Part> parts = new List<Part>();
+    [SerializeField] public List<Part> Parts = new List<Part>();
 
     // Ordering each type in a different list
     [SerializeField][HideInInspector] private List<Part> headParts;
@@ -29,7 +26,7 @@ public class PartCollection : ScriptableObject
         movementParts = new List<Part>();
         cpuParts = new List<Part>();
 
-        foreach (Part part in parts)
+        foreach (Part part in Parts)
         {
             switch (part.Type)
             {
@@ -59,7 +56,7 @@ public class PartCollection : ScriptableObject
     // Regular functions
     public Part GetPart(int index, List<Part> list = null)
     {
-        if (list == null) list = parts;
+        if (list == null) list = Parts;
 
         var part = list[Mathf.Clamp(index, 0, list.Count)];
         return Instantiate(part);
@@ -67,7 +64,7 @@ public class PartCollection : ScriptableObject
 
     public Part GetRandomPart()
     {
-        var part = GetPart(Random.Range(0, parts.Count));
+        var part = GetPart(Random.Range(0, Parts.Count));
         return part;
     }
 

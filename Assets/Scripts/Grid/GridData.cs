@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Yakanashe.Yautl;
 
 // A stuct to define Icon data and easily move it around
 public struct Icon
@@ -26,9 +27,11 @@ public class GridData : MonoBehaviour
     private float offsetx;
     private float offsety;
 
+    [SerializeField] private IconSwitcher iconSwitcher;
+
     [SerializeField] private List<IconData> icons;
 
-    [SerializeField] private GameObject iconPrefab;
+    [SerializeField] private GameObject gridObject;
 
     private List<GameObject> gridObjects = new();
 
@@ -42,9 +45,10 @@ public class GridData : MonoBehaviour
     }
 
     
-    //feature to initialize and update the grid
+    //function to initialize and update the grid
     public void BuildGrid()
     {
+        iconSwitcher.IsSwapping = true;
         gridObjects = new();
         
         if (grid == null)
@@ -56,6 +60,7 @@ public class GridData : MonoBehaviour
         {
             for (int x = 0; x < width; x++)
             {
+                
                 var worldX = (x - offsetx) * tileSize;
                 var worldY = (y - offsety) * tileSize;
                 
@@ -67,9 +72,28 @@ public class GridData : MonoBehaviour
                 grid[x, y].pos = new Vector2(x, y);
 
                 var pos = new Vector2(worldX, worldY);
-                var icon = Instantiate(randomData.prefab, pos, Quaternion.identity);
+                
+                var icon = Instantiate(randomData.prefab, pos, randomData.prefab.transform.rotation);
+                icon.transform.parent = gridObject.transform;
+                
                 grid[x, y].GO = icon;
+                var gridTransform = grid[x, y].GO.transform;
+                
                 gridObjects.Add(icon);
+                var a = gridTransform.position;
+                var b = a;
+                b.y = a.y + 2 + height;
+                gridTransform.position = b;
+                gridTransform.localScale = Vector3.zero;
+
+                iconSwitcher.CheckForMatch(x, y, out var amount, out _);
+                iconSwitcher.onMatchMade.Invoke(amount);
+
+                gridTransform.ScaleTo(Vector3.one, 1.1f, EaseType.InOutCubic);
+                gridTransform.MoveTo(a, 1, EaseType.InCubic).OnComplete(() =>
+                {
+                    iconSwitcher.IsSwapping = false;
+                });
             }
         }
     }

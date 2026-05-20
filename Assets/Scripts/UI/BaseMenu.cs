@@ -28,7 +28,6 @@ public class BaseMenu : MonoBehaviour
     {
         _canvasGroup = GetComponent<CanvasGroup>();
         _canvasGroup.interactable = !startInactive;
-        _canvasGroup.interactable = !startInactive;
         _canvasGroup.alpha = startInactive ? 0 : 1;
 
         fadeComplete.AddListener((value) => _canvasGroup.interactable = !value);

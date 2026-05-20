@@ -34,6 +34,10 @@ public class PartManageScreen : BaseMenu
     [SerializeField] private Color minusColor = Color.red;
     [SerializeField] private Color plusColor = Color.green;
 
+    [Header("Stats")]
+    [SerializeField] private int rarityRepairCost = 6;
+    [SerializeField] private int rarityCost = 4;
+
     private void Start()
     {
         backButton.onClick.AddListener(HideMenu);
@@ -61,7 +65,7 @@ public class PartManageScreen : BaseMenu
         ShowMenu();
 
         purchaseButton.onClick.RemoveAllListeners();
-        var cost = 10; // CALCULATE COST WITH SCALING AND RARITY
+        var cost = rarityRepairCost * savedPart.Rarity;
 
         if (savedPart.IsDamaged == false)
         {
@@ -70,7 +74,7 @@ public class PartManageScreen : BaseMenu
         }
         purchaseButton.gameObject.SetActive(true);
 
-        if (MoneyBag.HasEnoughMoney(cost) == false)
+        if (MoneyBag.HasEnough(cost) == false)
         {
             purchaseLabel.text = "Too poor! - $ " + cost.ToString();
             purchaseButton.interactable = false;
@@ -83,7 +87,7 @@ public class PartManageScreen : BaseMenu
         {
             savedPart.PartHealth = savedPart.MaxPartHealth;
             _robotBuilder.ChangeRobotPart(savedPart);
-            MoneyBag.RemoveMoney(cost);
+            MoneyBag.Remove(cost);
             HideMenu();
         });
     }
@@ -124,7 +128,9 @@ public class PartManageScreen : BaseMenu
                 hpBar.maxValue = comparePart.MaxPartHealth;
                 hpBar.value = comparePart.PartHealth;
                 deductLabel.text = "";
-                addLabel.text = "+" + (comparePart.PartHealth - savedPart.PartHealth).ToString();
+
+                var usedString = comparePart.PartHealth == savedPart.PartHealth ? "" : "+" + (comparePart.PartHealth - savedPart.PartHealth).ToString();
+                addLabel.text = usedString;
             }
         }
         else
@@ -140,9 +146,9 @@ public class PartManageScreen : BaseMenu
 
         purchaseButton.gameObject.SetActive(true);
         purchaseButton.onClick.RemoveAllListeners();
-        var cost = 25; // CALCULATE COST WITH SCALING AND RARITY
+        var cost = rarityCost * comparePart.Rarity;
 
-        if (MoneyBag.HasEnoughMoney(cost) == false)
+        if (MoneyBag.HasEnough(cost) == false)
         {
             purchaseLabel.text = "Too poor! - $ " + cost.ToString();
             purchaseButton.interactable = false;
@@ -154,7 +160,7 @@ public class PartManageScreen : BaseMenu
         purchaseButton.onClick.AddListener(() =>
         {
             _robotBuilder.ChangeRobotPart(comparePart);
-            MoneyBag.RemoveMoney(cost);
+            MoneyBag.Remove(cost);
             HideMenu();
         });
     }
