@@ -128,7 +128,9 @@ public class PartManageScreen : BaseMenu
                 hpBar.maxValue = comparePart.MaxPartHealth;
                 hpBar.value = comparePart.PartHealth;
                 deductLabel.text = "";
-                addLabel.text = "+" + (comparePart.PartHealth - savedPart.PartHealth).ToString();
+
+                var usedString = comparePart.PartHealth == savedPart.PartHealth ? "" : "+" + (comparePart.PartHealth - savedPart.PartHealth).ToString();
+                addLabel.text = usedString;
             }
         }
         else
