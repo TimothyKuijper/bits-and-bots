@@ -7,7 +7,6 @@ public class PlayerFightAnimator : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private string[] animationKeys;
     [SerializeField] private IconSwitcher iconSwitcher;
-    [SerializeField] private Transition transition;
 
     private readonly List<string> remainingAnimations = new();
 
@@ -16,8 +15,6 @@ public class PlayerFightAnimator : MonoBehaviour
         iconSwitcher.onMatchMade.AddListener(PlayAttackAnimation);
 
         RefillAnimationBag();
-
-        transition.Out(0.01f);
     }
 
     public void PlayAttackAnimation(int amount)
