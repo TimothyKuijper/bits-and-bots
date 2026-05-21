@@ -16,16 +16,16 @@ public class TransitionPlayer : MonoBehaviour
     {
         _eventSystem = FindObjectsByType<EventSystem>(FindObjectsSortMode.None)[0];
         _transition = GetComponent<Transition>();
-        SceneManager.sceneLoaded += (arg, arg1) => { if (_transition) _transition.Out(); };
+        _transition.Out(.1f);
     }
     public void TransitionToScene(string nextScene)
     {
         _eventSystem.enabled = false;
-        _transition.In(0, () => { SceneManager.LoadScene(nextScene); });
+        _transition.In(.1f, () => { SceneManager.LoadScene(nextScene); });
     }
     public void TransitionToScene(int nextScene)
     {
         _eventSystem.enabled = false;
-        _transition.In(0, () => { SceneManager.LoadScene(nextScene); });
+        _transition.In(.1f, () => { SceneManager.LoadScene(nextScene); });
     }
 }
