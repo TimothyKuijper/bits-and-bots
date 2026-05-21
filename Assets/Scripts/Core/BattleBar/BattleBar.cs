@@ -15,17 +15,21 @@ public class BattleBar : MonoBehaviour
     
     private float _barFillAmount = 50;
     private ITween _sliderTween;
+    
     private bool _finished;
+    private bool _allowDamage;
 
     private void Start()
     {
-        battleBarMaterial.ShaderFloatTo("_Fill", _barFillAmount * 0.01f, 0f, EaseType.Linear);
-        _finished = false;
+        ResetBar();
+        Invoke(nameof(EnableDamage), 0.3f);
     }
 
     public void Add(EntityType type, float amount)
     {
-        if (_finished) return;
+        if (_finished || !_allowDamage) return;
+        
+        Debug.Log($"{type} did {amount} damage");
         
         OnBarChanged.Invoke(type, amount);
         
@@ -46,8 +50,7 @@ public class BattleBar : MonoBehaviour
     {
         _finished = false;
         _barFillAmount = 50;
-        _sliderTween?.Stop();
-        _sliderTween = battleBarMaterial.ShaderFloatTo("_Fill", _barFillAmount * 0.01f, 0.4f, EaseType.OutCubic);
+        battleBarMaterial.SetFloat("_Fill", _barFillAmount * 0.01f);
     }
 
     private void OnDisable()
@@ -61,6 +64,8 @@ public class BattleBar : MonoBehaviour
         battleBarMaterial.SetFloat("_FresnelStrength", -0.2f - amount * 0.2f);
         battleBarMaterial.ShaderFloatTo("_FresnelStrength", -0.5f, 0.3f, EaseType.OutCubic);
     }
+
+    private void EnableDamage() => _allowDamage = true;
 }
 
 public enum EntityType

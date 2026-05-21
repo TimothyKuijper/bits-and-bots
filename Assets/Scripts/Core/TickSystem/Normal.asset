@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Normal
   m_EditorClassIdentifier: 
   Ticks:
-  - Damage: 2
-    Duration: 2.5
+  - Damage: 3
+    Duration: 2.2
