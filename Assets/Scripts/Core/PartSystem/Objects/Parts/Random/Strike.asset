@@ -9,9 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e8a4cbd48c70fc4087402549bb73012, type: 3}
-  m_Name: Normal
+  m_Script: {fileID: 11500000, guid: 7a7b6293a98c7b640968619d2b231eb0, type: 3}
+  m_Name: Strike
   m_EditorClassIdentifier: 
-  Ticks:
-  - Damage: 3
-    Duration: 2.2
+  PartName: Strike Aerial
+  PartColor: 966888
+  Type: 1
+  Rarity: 6
+  Value: 5
+  BreakModifier: 0.01
+  MaxPartHealth: 10
+  CurrentPartHealth: 2
