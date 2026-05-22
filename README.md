@@ -1,4 +1,7 @@
 # Bits & Bots
+<p align="center">
+<img width="100%" height="auto" alt="2026_05_11_0it_Kleki" src="https://github.com/user-attachments/assets/6b4c41cf-7e67-46c3-a282-0f1728d2073f" />
+</p>
 Een game met match 3 als input waar je robots moet upgraden om tegen vijanden te vechten
 ---
 
