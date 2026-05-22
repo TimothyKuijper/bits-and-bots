@@ -13,22 +13,40 @@ public class WinLoseArena : MonoBehaviour
     public Image Backdrop;
     public BattleBar BattleBar;
     public Transition Transition;
+    public RobotBuilder robotBuilder;
+    public int money = 40;
+    public int removedHealth = 1;
 
     private void Start()
     {
         BattleBar.OnBarFull.AddListener(ShowMenu);
     }
 
+    public void Win() => ShowMenu(EntityType.Player);
+    public void Lose() => ShowMenu(EntityType.Enemy);
+
     public void ShowMenu(EntityType type)
     {
         SelectUI.SetActive(true);
         
         Backdrop.ColorTo(new Color(0, 0, 0, 0.93f), 0.8f, EaseType.OutCubic);
-        
+
+        var robot = robotBuilder.LoadRobot();
+        robot.Head.PartHealth -= removedHealth;
+        robot.Body.PartHealth -= removedHealth;
+        robot.Weapon.PartHealth -= removedHealth;
+        robot.MovementModule.PartHealth -= removedHealth;
+        robot.Cpu.PartHealth -= removedHealth;
+        robotBuilder.ChangeRobotPart(robot.Head);
+        robotBuilder.ChangeRobotPart(robot.Body);
+        robotBuilder.ChangeRobotPart(robot.Weapon);
+        robotBuilder.ChangeRobotPart(robot.MovementModule);
+        robotBuilder.ChangeRobotPart(robot.Cpu);
+
         if (type == EntityType.Player)
         {
             RankSystem.Win();
-            MoneyBag.Add(10);
+            MoneyBag.Add(money);
             WinScreen.MoveTo(new Vector3(7.3f, 0, -4), 1f, EaseType.OutCubic);
             return;
         }

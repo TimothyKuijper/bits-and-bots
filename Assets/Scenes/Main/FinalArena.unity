@@ -1329,6 +1329,55 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!1 &436866741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 436866743}
+  - component: {fileID: 436866742}
+  m_Layer: 0
+  m_Name: RobotBuilder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &436866742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436866741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb5f937b8dcb0584c88381a8cedaadd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultHead: {fileID: 11400000, guid: 680429ded5d4ef1498d5df796733e9f4, type: 2}
+  defaultWeapon: {fileID: 11400000, guid: 9488ca3e6e47ca3419fa9be021eef9fb, type: 2}
+  defaultBody: {fileID: 11400000, guid: 0b70d1197185155488bba3e9c3e609ba, type: 2}
+  defaultCpu: {fileID: 11400000, guid: 18f8d1e34e5131c4db176690204bbbe5, type: 2}
+  defaultMovement: {fileID: 11400000, guid: 8d50948a7dfb40344ba71c483bdcdc6a, type: 2}
+--- !u!4 &436866743
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436866741}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1319542202}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &623127531
 GameObject:
   m_ObjectHideFlags: 0
@@ -3195,6 +3244,7 @@ Transform:
   - {fileID: 344665431}
   - {fileID: 1968246294}
   - {fileID: 1072100274}
+  - {fileID: 436866743}
   - {fileID: 1574364060}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3658,7 +3708,6 @@ GameObject:
   - component: {fileID: 1522352283}
   - component: {fileID: 1522352282}
   - component: {fileID: 1522352281}
-  - component: {fileID: 1522352280}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -3686,21 +3735,6 @@ RectTransform:
   m_AnchoredPosition: {x: 100, y: -100}
   m_SizeDelta: {x: 140, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1522352280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1522352278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 080521c7b27b9dc40a2dddb4f882a3c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transitionPlayer: {fileID: 1914403984}
-  sceneString: 
-  sceneIndex: 0
 --- !u!114 &1522352281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3744,7 +3778,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1522352282}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1574364061}
+        m_TargetAssemblyTypeName: WinLoseArena, Assembly-CSharp
+        m_MethodName: Lose
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1522352278}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1522352282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3918,6 +3976,9 @@ MonoBehaviour:
   Backdrop: {fileID: 1993646057}
   BattleBar: {fileID: 30525656}
   Transition: {fileID: 344665433}
+  robotBuilder: {fileID: 436866742}
+  money: 40
+  removedHealth: 1
 --- !u!1 &1610844936
 GameObject:
   m_ObjectHideFlags: 0
