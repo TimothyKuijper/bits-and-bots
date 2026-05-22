@@ -5,6 +5,19 @@
 Een game met match 3 als input waar je robots moet upgraden om tegen vijanden te vechten
 ---
 
+## Wiki
+* [Agile Planning](https://github.com/TimothyKuijper/bits-and-bots/wiki/Agile-Planning)
+* [Asset Conventions](https://github.com/TimothyKuijper/bits-and-bots/wiki/Asset-Conventions)
+* [Code Conventions](https://github.com/TimothyKuijper/bits-and-bots/wiki/Code-Conventions)
+* [Code Documentation](https://github.com/TimothyKuijper/bits-and-bots/wiki/Code-Documentation)
+* [Functioneel Ontwerp](https://github.com/TimothyKuijper/bits-and-bots/wiki/Functioneel-Ontwerp)
+* [Gitflow (versiebeheer conventies)](https://github.com/TimothyKuijper/bits-and-bots/wiki/Gitflow)
+* [Notulen](https://github.com/TimothyKuijper/bits-and-bots/wiki/Notulen)
+* [Pipeline](https://github.com/TimothyKuijper/bits-and-bots/wiki/Pipeline)
+* [Technisch Ontwerp](https://github.com/TimothyKuijper/bits-and-bots/wiki/Technisch-Ontwerp)
+* [User Tests](https://github.com/TimothyKuijper/bits-and-bots/wiki/User-Tests)
+
+## Uitleg
 De klant wilt een match 3 game waar het matchen niet de game is, maar de input. Voor de rest hebben wij complete creatieve vrijheid gekregen en is er al snel één concept naar voren gekomen die de klant leuk vind:
 
 In Bits & Bots speel je als de eigenaar van een robot die door middel van match 3 mechanics de robot kan laten vechten tegen steeds sterkere tegenstanders, en vervolgens de robot kan upgraden.
@@ -28,7 +41,8 @@ Game loop cycles through the garage (build mode) and stadium (fight mode), in th
 | Developer    | Noah      | Maakt systemen voor gameplay o.a. de part system en UI |
 | Developer    | Teffer    | Maakt mechanics voor gameplay o.a. de rank system |
 
-# Geproduceerde Game Onderdelen 
+# Highlighted Game Onderdelen
+> De andere features en mechanics zijn te lezen in de [wiki](https://github.com/TimothyKuijper/bits-and-bots/wiki/)
 
 ## Match 3
 
@@ -53,6 +67,5 @@ De arena camera zorgt voor dynamische poses iedere keer als de speler aanvalt, d
 Het onderdelen systeem is verantwoordelijk om de speler te verbeteren buiten hun ervaring. Dit zorgt ervoor dat de spelers altijd betere onderdelen zullen halen om bijvoorbeeld een grotere voorsprong te hebben op vijanden _of_ meer zekerheid hebben van hun kracht op lange termijn.
 
 <img width="252" height="446" alt="Bezig met opnemen 2026-05-22 111532" src="https://github.com/user-attachments/assets/ab55f1d2-7e40-4f94-99fa-9c05e92e465a" />
-
 
 
