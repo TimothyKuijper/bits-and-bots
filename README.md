@@ -47,3 +47,12 @@ De battle bar is het hart van het gevecht, en geeft een visuele manier om te zie
 De arena camera zorgt voor dynamische poses iedere keer als de speler aanvalt, door de camera naar een willekeurig punt in een lijst de lerpen, dit geeft ook meer impact aan de acties van de speler
 
 <img width="400" height="406" alt="ezgif-2c9a8234f8586dde" src="https://github.com/user-attachments/assets/dd9a6dd6-4910-47cd-ac6f-8d1f46d9a16b" />
+
+## Part System
+
+Het onderdelen systeem is verantwoordelijk om de speler te verbeteren buiten hun ervaring. Dit zorgt ervoor dat de spelers altijd betere onderdelen zullen halen om bijvoorbeeld een grotere voorsprong te hebben op vijanden _of_ meer zekerheid hebben van hun kracht op lange termijn.
+
+<img width="252" height="446" alt="Bezig met opnemen 2026-05-22 111532" src="https://github.com/user-attachments/assets/ab55f1d2-7e40-4f94-99fa-9c05e92e465a" />
+
+
+
