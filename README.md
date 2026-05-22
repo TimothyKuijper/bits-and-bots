@@ -14,29 +14,36 @@ Voor een complete en uitgebreide beschrijving over het functioneel ontwerp ga na
 Game loop:
 Game loop cycles through the garage (build mode) and stadium (fight mode), in the garage you can repair broken parts and roll for new parts which gives you a random type of part with random stats based on your level in-game (how many fights you won), in here you can also customise your parts (mind you these do not affect gameplay), in the stadium you will fight progessively stronger enemies, thus needing to use the garage to roll for better parts
 
+
+# Rollen
+
+| Rol          | Naam | Beschrijving |
+|--------------|--------|-------------|
+| Artist / Product Owner | Ahmet     | Communicatie met de klant, en maakt art assets o.a. concepten en de arena |
+| Developer / Lead Dev     | Timothy   | Checkt of code zich houdt aan de Code Conventies voordat MR's gemerged worden en maakt de match 3 mechanic |
+| Artist / Lead Art     | Cicerio   | Let op dat alle models en textures correct in Unity staan en maakt art assets o.a. de speler robot en de match 3 frame |
+| Developer / Scrum Master | Ferron    | Schrijft en checkt de Trello board, Noteert de Standup en Standdowns, maakt ook supporting gameplay mechanics |
+| Artist       | Renzo     | Maken van art assets o.a. de tiles en background art |
+| Artist       | Delainy   | Maken van art assets o.a. de enemy robot |
+| Developer    | Noah      | Maakt systemen voor gameplay o.a. de part system en UI |
+| Developer    | Teffer    | Maakt mechanics voor gameplay o.a. de rank system |
+
 # Geproduceerde Game Onderdelen 
-(de links woorden later verandert naar julie werk inverplaats van jullie namen)
 
-Timothy:
-* [Timothy](https://github.com/TimothyKuijper/bits-and-bots/tree/hotfix/readme/src/Timothy)
+## Match 3
 
-Ferron:
-* [Ferron](https://github.com/TimothyKuijper/bits-and-bots/tree/hotfix/readme/src/Ferron)
+De match 3 is **hoe** de speler terug vecht om de [battle bar](https://github.com/TimothyKuijper/bits-and-bots/wiki/Technisch-Ontwerp#battle-bar) te duwen naar de tegenstander hun kant. Wanneer de speler een match van 3 of meer zelfde icons krijgt duwt de speler de bar terug op basis van hoeveel schade alle [onderdelen](https://github.com/TimothyKuijper/bits-and-bots/wiki/Technisch-Ontwerp#part-system) bij elkaar doen.
 
-Teffer:
-* [Teffer](https://github.com/TimothyKuijper/bits-and-bots/tree/hotfix/readme/src/Teffer)
+<img width="50%" height="auto" alt="20260520-1342-07 8917050" src="https://github.com/user-attachments/assets/622b4d15-65de-46d2-b9bb-aec7d36b6112" />
 
-Noah:
-* [Noah](https://github.com/TimothyKuijper/bits-and-bots/tree/hotfix/readme/src/Noah)
+# Battle Bar
 
-Cicerio:
-* [Cicerio](https://github.com/TimothyKuijper/bits-and-bots/tree/hotfix/readme/src/Cicerio)
+De battle bar is het hart van het gevecht, en geeft een visuele manier om te zien of je wint of verliest. De battle bar begint altijd op 50, en tijdens het gevecht maakt de speler matches die dit getal verhoogd, en de vijand valt aan om dit getal te verlagen. Het gevecht wordt beslist door wie als eerste de bar vol krijgt, voor de speler is dat 100, en voor de vijand 0. 
 
-Delainy:
-* [Delainy](https://github.com/TimothyKuijper/bits-and-bots/tree/hotfix/readme/src/Delainy)
+<img width="456" height="146" alt="20260517-2055-11 4837186" src="https://github.com/user-attachments/assets/c3992707-c6f4-46b0-abe9-3f34518b2bdc" />
 
-Ahmet:
-* [Ahmet](https://github.com/TimothyKuijper/bits-and-bots/tree/hotfix/readme/src/Ahmet)
+## Arena Camera
 
-Renzo:
-* [Renzo](https://github.com/TimothyKuijper/bits-and-bots/tree/hotfix/readme/src/Renzo)
+De arena camera zorgt voor dynamische poses iedere keer als de speler aanvalt, door de camera naar een willekeurig punt in een lijst de lerpen, dit geeft ook meer impact aan de acties van de speler
+
+<img width="400" height="406" alt="ezgif-2c9a8234f8586dde" src="https://github.com/user-attachments/assets/dd9a6dd6-4910-47cd-ac6f-8d1f46d9a16b" />
