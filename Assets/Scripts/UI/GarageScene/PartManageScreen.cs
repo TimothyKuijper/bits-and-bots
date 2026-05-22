@@ -52,7 +52,7 @@ public class PartManageScreen : BaseMenu
         iconImage.sprite = partSprites[(int)partType];
         iconImage.color = ColorTTools.GetColorFromHex(savedPart.PartColor);
 
-        var damage = savedPart.Value.ToString();
+        var damage = savedPart.GetPartValue().ToString();
         damageLabel.color = sameColor;
         damageLabel.text = "Damage: " + damage;
 
@@ -103,10 +103,10 @@ public class PartManageScreen : BaseMenu
         iconImage.color = ColorTTools.GetColorFromHex(comparePart.PartColor);
 
         var damage = comparePart.Value.ToString();
-        if (comparePart.Value != savedPart.Value)
+        if (comparePart.GetPartValue() != savedPart.GetPartValue())
         {
-            var damageDifference = (comparePart.Value - savedPart.Value).ToString();
-            var isAbove = comparePart.Value > savedPart.Value;
+            var damageDifference = (comparePart.GetPartValue() - savedPart.GetPartValue()).ToString();
+            var isAbove = comparePart.GetPartValue() > savedPart.GetPartValue();
 
             damage = isAbove ? "+" + damageDifference : damageDifference;
             damageLabel.color = isAbove ? plusColor : minusColor;
