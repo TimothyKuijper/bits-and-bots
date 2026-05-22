@@ -70,6 +70,8 @@ Ahmet:
 * Arena Scene
 
 Delainy:
+* Concept Art
+  * Enemy robot
 * Enemy robot
   * Animaties
   * Textures
@@ -91,8 +93,8 @@ Cicero:
 
 Renzo:
 * Concept art
-  * Concept icons
-  * Concept garage
+  * Icons
+  * Garage
 * Garage scene
 * Icon Models
 * Battle bar Model
