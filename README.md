@@ -41,6 +41,64 @@ Game loop cycles through the garage (build mode) and stadium (fight mode), in th
 | Developer    | Noah      | Maakt systemen voor gameplay o.a. de part system en UI |
 | Developer    | Teffer    | Maakt mechanics voor gameplay o.a. de rank system |
 
+# Geproduceerde Game Onderdelen
+
+Timothy:
+* Match 3 system
+  
+Ferron:
+* Battle bar
+* Tick system
+* Garage scene refinenment
+* Dynamic arena Camera
+
+Teffer:
+* Rank system
+
+Noah:
+* Part System
+* Money System
+* UI Baseclasses
+* Garage scene setup & logic
+* Transition Player
+
+Ahmet:
+* Concept art
+    * Icons
+    * Tiles
+    * Arena
+* Arena Scene
+
+Delainy:
+* Concept Art
+  * Enemy robot
+* Enemy robot
+  * Animaties
+  * Textures
+  * Model
+
+Cicero:
+* Concept Art
+  * Robot
+  * Win Screen
+  * Icons
+* Rank Icon
+* Winscreen model
+* Item bar model
+* Player robot
+  * Animaties
+  * Textures
+  * Model
+* Grid model
+
+Renzo:
+* Concept art
+  * Icons
+  * Garage
+* Garage scene
+* Icon Models
+* Battle bar Model
+
 # Highlighted Game Onderdelen
 > De andere features en mechanics zijn te lezen in de [wiki](https://github.com/TimothyKuijper/bits-and-bots/wiki/)
 
